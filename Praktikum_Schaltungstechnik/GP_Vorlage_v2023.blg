@@ -1,0 +1,9 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[4] Config.pm:331> INFO - Logfile is 'GP_Vorlage_v2023.blg'
+[184] biber-MSWIN64:342> INFO - === 
+[385] Biber.pm:421> INFO - Reading 'GP_Vorlage_v2023.bcf'
+[647] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[706] bbl.pm:676> INFO - Writing 'GP_Vorlage_v2023.bbl' with encoding 'UTF-8'
+[707] bbl.pm:779> INFO - Output to GP_Vorlage_v2023.bbl
+[710] Biber.pm:132> WARN - The file 'GP_Vorlage_v2023.bcf' does not contain any citations!
+[711] Biber.pm:134> INFO - WARNINGS: 1

@@ -1,0 +1,61 @@
+% Header: Here are all packages used and some additional definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{graphicx} % zum Einbinden von Graphiken
+\usepackage[breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref} % f. Referenzen
+\usepackage{amsmath,amsthm,amssymb} % Mathematik Umgebung 
+\usepackage{icomma} % Intelligentes Komma, das den richtigen Abstand zwischen Dezimalzahlen als auch in Formeln wählt.
+\usepackage[ngerman]{babel} % Deutsche Bezeichnungen bei Inhaltsangabe etc
+\usepackage[T1]{fontenc}    % andere Schriftsatzkodierung für richtige Silbentrennung bei Umlauten
+\usepackage[locale = DE,space-before-unit=true,per-mode = symbol]{siunitx} % Bessere Einheiten
+\usepackage{placeins} % Definiert den Befehl “\FloatBarrier”, der die Ausgabe der davor eingebundenen Bilder erzwingt, befor der Text weiter geht. (Mit vorsicht zu verwenden)
+\usepackage[natbib,abbreviate=true,doi=false,style=numeric-comp,giveninits=true,sorting=none]{biblatex} % Modernes Paket zur Erzeugung von Bibliografien (benötigt biber!)
+\usepackage[european, straightvoltages]{circuitikz} % Erstellung von elektrischen Schaltungen
+\usepackage{pgfplots} % Erstellung von Graphen
+\usepackage{float}% Ermöglicht [H] bei \figures
+\pgfplotsset{compat=1.18} % Empfohlen, um die neueste Engine zu nutzen
+
+\addbibresource{MyBibliography.bib} % Ort der .bib Datei, die die Datenbank für Literatur/Referenzen enthält.
+
+\graphicspath{{Bilder/}}
+
+\DeclareSIUnit{\dBm}{dBm}
+\DeclareSIUnit[per-mode=reciprocal]\WN{\per\centi\meter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%
+\title{\includegraphics[width=5cm]{logo.jpg} \\ Schaltungstechnik: Ein Experimenteller Überblick}
+\author{Kevin Gonci (62400675), Paul Maurer (62400670)\\Sommersemester 2026}
+\date{\today}
+\maketitle
+\vfill
+\renewcommand\abstractname{Kurzfassung}
+\section*{\abstractname}
+\textit{In diesem Praktikum wurden in mehreren Laborterminen verschiedene Transistorschaltungen aufgebaut, Messungen durchgeführt und die Ergebnisse diskutiert.}
+\thispagestyle{empty}
+%
+%
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+\pagenumbering{arabic} 
+\newpage
+%
+%
+\input{1.Laborversuch}
+\input{2.Laborversuch}
+\input{3.Laborversuch}
+\input{4.Laborversuch}
+
+
+\printbibliography[]
+\vfill
+
+
+
+
+\end{document}
