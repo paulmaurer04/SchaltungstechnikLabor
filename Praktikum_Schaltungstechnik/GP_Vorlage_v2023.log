@@ -869,10 +869,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count492
 \@quotereset=\count493
-(GP_Vorlage_v2023.aux
-Package babel Info: 'ngerman' activates 'german' shorthands.
-(babel)             Reported on input line 9.
-)
+(GP_Vorlage_v2023.aux)
 \openout1 = `GP_Vorlage_v2023.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -948,10 +945,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 29.
- (GP_Vorlage_v2023.out) (GP_Vorlage_v2023.out)
 \@outlinefile=\write5
 \openout5 = `GP_Vorlage_v2023.out'.
 
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 29.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
@@ -983,7 +981,7 @@ Package biblatex Info: Reference segment=0 on input line 29.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<Bilder/logo.jpg, id=22, 569.4876pt x 224.7597pt>
+<Bilder/logo.jpg, id=6, 569.4876pt x 224.7597pt>
 File: Bilder/logo.jpg Graphic file (type jpg)
 <use Bilder/logo.jpg>
 Package pdftex.def Info: Bilder/logo.jpg  used on input line 35.
@@ -995,13 +993,27 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (GP_Vorlage_v2023.toc)
+)
+No file GP_Vorlage_v2023.toc.
 \tf@toc=\write6
 \openout6 = `GP_Vorlage_v2023.toc'.
 
- [1
+[1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Bilder/logo.jpg>] (1.Laborversuch.tex
+
+LaTeX Warning: Reference `Reihenschaltung' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Reference `Reihenschaltung2' on page 1 undefined on input line 27.
+
+
+LaTeX Warning: Reference `eq:1' on page 1 undefined on input line 55.
+
+
+LaTeX Warning: Reference `eq:3' on page 1 undefined on input line 55.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1019,20 +1031,38 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has
                                                   \__shipout_drop_firstpage_...
 l.56 \begin{equation}
                      ]
+
+LaTeX Warning: Reference `fig:1' on page 2 undefined on input line 156.
+
+
+LaTeX Warning: Reference `fig:1' on page 2 undefined on input line 157.
+
+
+LaTeX Warning: Reference `fig:2' on page 2 undefined on input line 158.
+
 PGFPlots: reading {"Simulationen 1.Labor/sim1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/sim2.txt"}
- [2
+[2
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.206  D
         es Weiteren sollte anhand von Simulationsdaten auch die Eingangskenn...]
+
+LaTeX Warning: Reference `fig:3' on page 3 undefined on input line 206.
+
+
+LaTeX Warning: Reference `fig:3' on page 3 undefined on input line 206.
+
 PGFPlots: reading {"Simulationen 1.Labor/Eingangskennlinie.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie3.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie5.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie7.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie9.txt"}
+
+LaTeX Warning: Reference `fig:4' on page 3 undefined on input line 277.
+
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie2.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie3.txt"}
@@ -1046,4 +1076,120 @@ Overfull \hbox (40.80951pt too wide) in paragraph at lines 338--339
 [3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
-  
+                                                  \__shipout_drop_firstpage_...
+l.342 \section
+              *{3}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.342 \section
+              *{3}]
+
+LaTeX Warning: Reference `fig:5' on page 4 undefined on input line 344.
+
+<Fotos 1.Labor/Emitterverstärkerschaltung.jpg, id=53, 539.616pt x 342.68025pt>
+File: Fotos 1.Labor/Emitterverstärkerschaltung.jpg Graphic file (type jpg)
+<use Fotos 1.Labor/Emitterverstärkerschaltung.jpg>
+Package pdftex.def Info: Fotos 1.Labor/Emitterverstärkerschaltung.jpg  used on input line 347.
+(pdftex.def)             Requested size: 182.09486pt x 115.63652pt.
+PGFPlots: reading {"Simulationen 1.Labor/Emitter.txt"}
+PGFPlots: reading {"Simulationen 1.Labor/Emitter.txt"}
+
+LaTeX Warning: Reference `fig:6' on page 4 undefined on input line 387.
+
+
+LaTeX Warning: Reference `eq:4' on page 4 undefined on input line 388.
+
+[4
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.389 \begin{equation}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.389 \begin{equation}
+                       <./Fotos 1.Labor/Emitterverstärkerschaltung.jpg>]
+
+LaTeX Warning: Reference `eq:5' on page 5 undefined on input line 397.
+
+) (2.Laborversuch.tex [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1 \newpage
+            ]) (3.Laborversuch.tex [6]
+3.Laborversuch.tex:18: Undefined control sequence.
+l.18 ...afür wurde eine negative Spannung von \Si
+                                                  {5}{\volt} benötigt. Dies...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+3.Laborversuch.tex:18: Undefined control sequence.
+\volt ->\ERROR 
+               
+l.18 ...de eine negative Spannung von \Si{5}{\volt
+                                                  } benötigt. Diese wurde m...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (17.16791pt too wide) in paragraph at lines 17--21
+\T1/cmr/m/n/10.95 ga-ti-ve Span-nung von 5 be-n�-tigt. Die-se wur-de mit-hil-fe von ei-ner 2-Kanal-Gleichstromversorgung
+ []
+
+) (4.Laborversuch.tex [7])
+
+LaTeX Warning: Empty bibliography on input line 55.
+
+[8] (GP_Vorlage_v2023.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `GP_Vorlage_v2023.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `GP_Vorlage_v2023.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  2B787092FDE3BBFB4AA19A6D8ED015C6;412.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                GP_Vorlage_v2023
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'GP_Vorlage_v2023.run.xml'.
+\openout1 = `GP_Vorlage_v2023.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 63208 strings out of 467871
+ 1619282 string characters out of 5418860
+ 2823387 words of memory out of 5000000
+ 91361 multiletter control sequences out of 15000+600000
+ 640347 words of font info for 73 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 99i,21n,118p,842b,2604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on GP_Vorlage_v2023.pdf (9 pages, 381036 bytes).
+PDF statistics:
+ 343 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+
