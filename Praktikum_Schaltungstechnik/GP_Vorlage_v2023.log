@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.30)  27 MAY 2026 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.30)  28 MAY 2026 18:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -869,10 +869,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count492
 \@quotereset=\count493
-(GP_Vorlage_v2023.aux
-Package babel Info: 'ngerman' activates 'german' shorthands.
-(babel)             Reported on input line 9.
-)
+No file GP_Vorlage_v2023.aux.
 \openout1 = `GP_Vorlage_v2023.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -893,7 +890,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -948,10 +944,11 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 29.
- (GP_Vorlage_v2023.out) (GP_Vorlage_v2023.out)
 \@outlinefile=\write5
 \openout5 = `GP_Vorlage_v2023.out'.
 
+Package babel Info: 'ngerman' activates 'german' shorthands.
+(babel)             Reported on input line 29.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
@@ -983,7 +980,7 @@ Package biblatex Info: Reference segment=0 on input line 29.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<Bilder/logo.jpg, id=22, 569.4876pt x 224.7597pt>
+<Bilder/logo.jpg, id=6, 569.4876pt x 224.7597pt>
 File: Bilder/logo.jpg Graphic file (type jpg)
 <use Bilder/logo.jpg>
 Package pdftex.def Info: Bilder/logo.jpg  used on input line 35.
@@ -995,51 +992,83 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (GP_Vorlage_v2023.toc)
+)
+No file GP_Vorlage_v2023.toc.
 \tf@toc=\write6
 \openout6 = `GP_Vorlage_v2023.toc'.
 
- [1
+[1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Bilder/logo.jpg>] (1.Laborversuch.tex
+
+LaTeX Warning: Reference `Reihenschaltung' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Reference `Reihenschaltung2' on page 1 undefined on input line 30.
+
+
+LaTeX Warning: Reference `eq:1' on page 1 undefined on input line 58.
+
+
+LaTeX Warning: Reference `eq:3' on page 1 undefined on input line 58.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 \begin{equation}
+l.59 \begin{equation}
                       [1
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.56 \begin{equation}
+l.59 \begin{equation}
                      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.56 \begin{equation}
+l.59 \begin{equation}
                      ]
+
+LaTeX Warning: Reference `fig:1' on page 2 undefined on input line 159.
+
+
+LaTeX Warning: Reference `fig:1' on page 2 undefined on input line 161.
+
+
+LaTeX Warning: Reference `fig:2' on page 2 undefined on input line 163.
+
 PGFPlots: reading {"Simulationen 1.Labor/sim1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/sim2.txt"}
- [2
+[2
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.206  D
+l.213  D
         es Weiteren sollte anhand von Simulationsdaten auch die Eingangskenn...]
+
+LaTeX Warning: Reference `fig:3' on page 3 undefined on input line 213.
+
+
+LaTeX Warning: Reference `fig:3' on page 3 undefined on input line 213.
+
 PGFPlots: reading {"Simulationen 1.Labor/Eingangskennlinie.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie3.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie5.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie7.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie9.txt"}
+
+LaTeX Warning: Reference `fig:4' on page 3 undefined on input line 284.
+
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie1.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie2.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Ausgangskennlinie3.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/sim2.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Eingangskennlinie.txt"}
 
-Overfull \hbox (40.80951pt too wide) in paragraph at lines 338--339
+Overfull \hbox (40.80951pt too wide) in paragraph at lines 345--346
  [][] 
  []
 
@@ -1047,36 +1076,111 @@ Overfull \hbox (40.80951pt too wide) in paragraph at lines 338--339
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342 \section
+l.349 \section
               *{3}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342 \section
+l.349 \section
               *{3}]
-<Fotos 1.Labor/Emitterverstärkerschaltung.jpg, id=84, 539.616pt x 342.68025pt>
+
+LaTeX Warning: Reference `fig:5' on page 4 undefined on input line 351.
+
+<Fotos 1.Labor/Emitterverstärkerschaltung.jpg, id=53, 539.616pt x 342.68025pt>
 File: Fotos 1.Labor/Emitterverstärkerschaltung.jpg Graphic file (type jpg)
 <use Fotos 1.Labor/Emitterverstärkerschaltung.jpg>
-Package pdftex.def Info: Fotos 1.Labor/Emitterverstärkerschaltung.jpg  used on input line 347.
+Package pdftex.def Info: Fotos 1.Labor/Emitterverstärkerschaltung.jpg  used on input line 354.
 (pdftex.def)             Requested size: 182.09486pt x 115.63652pt.
 PGFPlots: reading {"Simulationen 1.Labor/Emitter.txt"}
 PGFPlots: reading {"Simulationen 1.Labor/Emitter.txt"}
- [4
+
+LaTeX Warning: Reference `fig:6' on page 4 undefined on input line 394.
+
+
+LaTeX Warning: Reference `eq:4' on page 4 undefined on input line 395.
+
+[4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.389 \begin{equation}
+l.396 \begin{equation}
                       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.389 \begin{equation}
-                       <./Fotos 1.Labor/Emitterverstärkerschaltung.jpg>]) (2.Laborversuch.tex [5
+l.396 \begin{equation}
+                       <./Fotos 1.Labor/Emitterverstärkerschaltung.jpg>]
+
+LaTeX Warning: Reference `eq:5' on page 5 undefined on input line 404.
+
+) (2.Laborversuch.tex [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \newpage
-            ]) (3.Laborversuch.tex [6]) (4.Laborversuch.tex [7])
+            ]) (3.Laborversuch.tex [6]
+
+LaTeX Warning: Reference `fig:7' on page 7 undefined on input line 23.
+
+3.Laborversuch.tex:33: Display math should end with $$.
+<to be read again> 
+                    
+l.33                $ 
+                      r_1 = $
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+3.Laborversuch.tex:33: Missing $ inserted.
+<inserted text> 
+                $
+l.33                $ r_
+                        1 = $
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+3.Laborversuch.tex:34: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34         \end{equation}
+                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+3.Laborversuch.tex:34: You can't use `\eqno' in horizontal mode.
+\veqno ->\@kernel@eqno 
+                       \aftergroup \ignorespaces 
+l.34         \end{equation}
+                           
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+3.Laborversuch.tex:34: Missing $ inserted.
+<inserted text> 
+                $
+l.34         \end{equation}
+                           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+3.Laborversuch.tex:34: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.34         \end{equation}
+                           
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+) (4.Laborversuch.tex [7])
 
 LaTeX Warning: Empty bibliography on input line 55.
 
@@ -1085,24 +1189,42 @@ LaTeX Warning: Empty bibliography on input line 55.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-Package rerunfilecheck Info: File `GP_Vorlage_v2023.out' has not changed.
-(rerunfilecheck)             Checksum: 2B787092FDE3BBFB4AA19A6D8ED015C6;412.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `GP_Vorlage_v2023.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `GP_Vorlage_v2023.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  2B787092FDE3BBFB4AA19A6D8ED015C6;412.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                GP_Vorlage_v2023
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'GP_Vorlage_v2023.run.xml'.
 \openout1 = `GP_Vorlage_v2023.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 63224 strings out of 467871
- 1619793 string characters out of 5418860
- 2824078 words of memory out of 5000000
- 91368 multiletter control sequences out of 15000+600000
+ 63210 strings out of 467871
+ 1619177 string characters out of 5418860
+ 2823396 words of memory out of 5000000
+ 91361 multiletter control sequences out of 15000+600000
  640347 words of font info for 73 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  99i,21n,118p,842b,2604s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on GP_Vorlage_v2023.pdf (9 pages, 391949 bytes).
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on GP_Vorlage_v2023.pdf (9 pages, 382601 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 55 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

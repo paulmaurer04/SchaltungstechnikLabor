@@ -22,9 +22,12 @@ Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen a
     \caption{Reihenschaltung ideal}
     \label{Reihenschaltung}
 \end{figure}
-Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, während ein Spannungsabfall von \SI{6}{\volt} erwartet wird. Diese Abweichung bei der Messung des Spannungsabfalls lässt sich dadurch erklären, dass der Tastkopf des Oszilloskops einen Innenwiderstand von ungefähr \SI{1}{\mega\ohm} besitzt.
-
-Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,3}{\mega\ohm} Widerstands mit einer Parallelschaltung aus einem \SI{3,3}{\mega\ohm} und einem ungefähr \SI{1}{\mega\ohm} Widerstand besteht, siehe Abbildung \ref{Reihenschaltung2}.
+Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, während ein Spannungsabfall von \SI{6}{\volt} erwartet wird.
+ Diese Abweichung bei der Messung des Spannungsabfalls lässt sich dadurch erklären, dass der Tastkopf des Oszilloskops 
+ einen Innenwiderstand von ungefähr \SI{1}{\mega\ohm} besitzt.
+Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,3}{\mega\ohm} Widerstands mit
+ einer Parallelschaltung aus einem \SI{3,3}{\mega\ohm} und einem ungefähr \SI{1}{\mega\ohm} Widerstand besteht, 
+ siehe Abbildung \ref{Reihenschaltung2}.
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[european]
@@ -153,9 +156,13 @@ R_3 = \frac{\frac{U_{R_2,R_3}}{U_1}\cdot R_1\cdot R_2}{R_2- \frac{U_{R_2,R_3}}{U
     \label{fig:1}
 \end{figure}
 
-Bei der Eingangskennlinie, siehe Abbildung \ref{fig:1} erkennt man deutlich ein exponentielles Verhalten des Basisstroms im Verhältnis zu der Basis-Emitter-Spannung.
-Bei der Stromverstärkungskennlinie, siehe Abbildung \ref{fig:1}, sieht man dass sich die Stromverstärkung linear verhält. Mit steigendem Basisstrom erhalten man auch einen steigenden Kollektorstrom.\\
-Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fig:2}. Dabei erkennt man das die Werte deutlich mit den realen Messwerten übereinstimmen. Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuführen.
+Bei der Eingangskennlinie, siehe Abbildung \ref{fig:1} erkennt man deutlich ein exponentielles 
+Verhalten des Basisstroms im Verhältnis zu der Basis-Emitter-Spannung.
+Bei der Stromverstärkungskennlinie, siehe Abbildung \ref{fig:1}, sieht man dass sich 
+die Stromverstärkung linear verhält. Mit steigendem Basisstrom erhalten man auch einen steigenden Kollektorstrom.\\
+Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fig:2}. 
+Dabei erkennt man das die Werte deutlich mit den realen Messwerten übereinstimmen. 
+Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuführen.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}

@@ -362,9 +362,6 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgfl
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
-INPUT .\GP_Vorlage_v2023.aux
-INPUT .\GP_Vorlage_v2023.aux
-INPUT GP_Vorlage_v2023.aux
 OUTPUT GP_Vorlage_v2023.aux
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -374,14 +371,8 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopd
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\GP_Vorlage_v2023.out
-INPUT .\GP_Vorlage_v2023.out
-INPUT GP_Vorlage_v2023.out
-INPUT GP_Vorlage_v2023.out
-OUTPUT GP_Vorlage_v2023.pdf
-INPUT .\GP_Vorlage_v2023.out
-INPUT .\GP_Vorlage_v2023.out
 OUTPUT GP_Vorlage_v2023.out
+OUTPUT GP_Vorlage_v2023.pdf
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-german.trsl
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-german.trsl
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-german.trsl
@@ -435,10 +426,6 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symb
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1095.tfm
-INPUT .\GP_Vorlage_v2023.toc
-INPUT .\GP_Vorlage_v2023.toc
-INPUT GP_Vorlage_v2023.toc
-INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1095.tfm
 OUTPUT GP_Vorlage_v2023.toc
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\1.Laborversuch.tex
@@ -450,6 +437,7 @@ INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1095.tfm
 INPUT Simulationen 1.Labor\sim1.txt
 INPUT Simulationen 1.Labor\sim2.txt
 INPUT Simulationen 1.Labor\Eingangskennlinie.txt
@@ -485,16 +473,15 @@ INPUT 4.Laborversuch.tex
 INPUT GP_Vorlage_v2023.aux
 INPUT .\GP_Vorlage_v2023.out
 INPUT .\GP_Vorlage_v2023.out
-INPUT GP_Vorlage_v2023.run.xml
 OUTPUT GP_Vorlage_v2023.run.xml
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
-INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
-INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk
 INPUT C:\Users\User\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
