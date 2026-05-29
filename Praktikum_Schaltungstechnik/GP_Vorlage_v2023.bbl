@@ -16,5 +16,35 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{PR_digital}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}{%
+           family={Univ.-Prof.\bibnamedelimi Dipl.-Ing.\bibnamedelimi Dr.\bibnamedelimi Alexander\bibnamedelima Sutor},
+           familyi={U\bibinithyphendelim P\bibinitperiod\bibinitdelim D\bibinithyphendelim I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Bsc.},
+           giveni={B\bibinitperiod},
+           suffix={Dipl.-Ing.\bibnamedelimi Bruno\bibnamedelima Ortner},
+           suffixi={D\bibinithyphendelim I\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{fullhash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{fullhashraw}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{bibnamehash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{authorbibnamehash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{authornamehash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{authorfullhash}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \strng{authorfullhashraw}{4ebb1be1e3a6e2b0b5f3b1ea29cf49c2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Vorlesung PR Digitaltechnik in der Elektrotechnik}
+      \field{year}{2025}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

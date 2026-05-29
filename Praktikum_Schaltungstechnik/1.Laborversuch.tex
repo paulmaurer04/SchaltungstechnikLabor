@@ -7,7 +7,7 @@ In diesem Laborversuch wurde zunächst eine Einführung in das richtige Messen i
 
 \section*{Durchführung}
 \subsection*{1}
-Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen aufgebaut, siehe Abbildung \ref{Reihenschaltung}. Die Widerstandswerte werden mit einem Multimeter gemessen. Anschließend wird eine \SI{12}{\volt} Spannungsversorgung angeschlossen, und der Spannungsabfall $U_{R_2}$ wird mithilfe eines Oszilloskops gemessen.
+Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen aufgebaut, siehe Abbildung \ref{Reihenschaltung}. Die Widerstandswerte werden mit einem Multimeter gemessen. Anschließend wird eine \SI{12}{\volt} Spannungsversorgung angeschlossen und der Spannungsabfall $U_{R_2}$ mithilfe eines Oszilloskops gemessen.
 \begin{figure}[h]
     \centering
     \begin{circuitikz}[european]
@@ -19,15 +19,15 @@ Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen a
         -- (0,0);                        % Leitung zurück zum Start
 
     \end{circuitikz}
-    \caption{Reihenschaltung ideal}
+    \caption{ideale Reihenschaltung}
     \label{Reihenschaltung}
 \end{figure}
-Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, während ein Spannungsabfall von \SI{6}{\volt} erwartet wird.
- Diese Abweichung bei der Messung des Spannungsabfalls lässt sich dadurch erklären, dass der Tastkopf des Oszilloskops 
- einen Innenwiderstand von ungefähr \SI{1}{\mega\ohm} besitzt.
-Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,3}{\mega\ohm} Widerstands mit
- einer Parallelschaltung aus einem \SI{3,3}{\mega\ohm} und einem ungefähr \SI{1}{\mega\ohm} Widerstand besteht, 
- siehe Abbildung \ref{Reihenschaltung2}.
+Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, obwohl ein Spannungsabfall von \SI{6}{\volt} erwartet worden war.
+ Diese Abweichung bei der Messung des Spannungsabfalls lässt sich dadurch erklären, 
+ dass der Tastkopf des Oszilloskops einen Innenwiderstand von ungefähr \SI{1}{\mega\ohm} besitzt.
+  Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,3}{\mega\ohm} Widerstands
+   und einer Parallelschaltung aus einem \SI{3,3}{\mega\ohm} sowie dem Innenwiderstand des Oszilloskops besteht, 
+   siehe Abbildung \ref{Reihenschaltung2}.
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[european]
@@ -52,12 +52,12 @@ Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,
         to[short] (8,0) 
         -- (0,0);
     \end{circuitikz}
-    \caption{Reihenschaltung real}
+    \caption{reale Reihenschaltung}
     \label{Reihenschaltung2}
 \end{figure}
-Den genauen Widerstandswert kann man durch die Berechnungen \ref{eq:1} bis \ref{eq:3}, mithilfe der Spannungsteilerregel ermitteln. 
+Den genauen Widerstandswert des Innenwiderstands kann man durch die Berechnungen \ref{eq:1} bis \ref{eq:3} mithilfe der Spannungsteilerregel ermitteln. 
 \begin{equation}
-    U_{R_2,R_3}= \frac{R_2||R_3}{R_1+R_2||R_3}\cdot U_1 = \frac{R_2\cdot R_3}{R_1\cdot R_2+R_1\cdot R_3+R_2\cdot R_3}\cdot U1
+    U_{R_2,R_3}= \frac{R_2||R_3}{R_1+R_2||R_3}\cdot U_1 = \frac{R_2\cdot R_3}{R_1\cdot R_2+R_1\cdot R_3+R_2\cdot R_3}\cdot U_1
     \label{eq:1}
 \end{equation}
 \begin{equation}
@@ -69,7 +69,7 @@ R_3 = \frac{\frac{U_{R_2,R_3}}{U_1}\cdot R_1\cdot R_2}{R_2- \frac{U_{R_2,R_3}}{U
     \label{eq:3}
 \end{equation}
 \section*{2}
- Die erste Transistorschaltung wurde aufgebaut. Dabei war das Ziel die experimentelle Darstellung der Übertragungskennlinien ($U_{BE}$, $I_C$) und ($I_B$, $I_C$) des Transistors 2N4401. Als Vorwiderstand wurde ein \SI{22}{\kilo\ohm} Widerstand gewählt, und die Spannung $U_{CE}$ wurde auf \SI{5}{\volt} gesetzt. Dabei sollte der Strom $I_C$ auf \SI{60}{\milli\ampere} limitiert werden.
+ Zunächst wurde die erste Transistorschaltung aufgebaut. Dabei war das Ziel die experimentelle Darstellung der Übertragungskennlinien ($U_{BE}$, $I_C$) und ($I_B$, $I_C$) des Transistors 2N4401. Als Vorwiderstand wurde ein \SI{22}{\kilo\ohm} Widerstand gewählt und die Spannung $U_{CE}$ wurde auf \SI{5}{\volt} gesetzt. Dabei sollte der Strom $I_C$ auf \SI{60}{\milli\ampere} limitiert werden.
 \begin{figure}[H]
 \centering
         \begin{tikzpicture}
@@ -156,13 +156,8 @@ R_3 = \frac{\frac{U_{R_2,R_3}}{U_1}\cdot R_1\cdot R_2}{R_2- \frac{U_{R_2,R_3}}{U
     \label{fig:1}
 \end{figure}
 
-Bei der Eingangskennlinie, siehe Abbildung \ref{fig:1} erkennt man deutlich ein exponentielles 
-Verhalten des Basisstroms im Verhältnis zu der Basis-Emitter-Spannung.
-Bei der Stromverstärkungskennlinie, siehe Abbildung \ref{fig:1}, sieht man dass sich 
-die Stromverstärkung linear verhält. Mit steigendem Basisstrom erhalten man auch einen steigenden Kollektorstrom.\\
-Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fig:2}. 
-Dabei erkennt man das die Werte deutlich mit den realen Messwerten übereinstimmen. 
-Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuführen.
+Anhand der Eingangskennlinie in Abbildung \ref{fig:1} erkennt man deutlich ein exponentielles Verhalten des Basisstroms im Verhältnis zur Basis-Emitter-Spannung. Bei der Stromverstärkungskennlinie (siehe Abbildung \ref{fig:1}) ist zu sehen, dass sich die Stromverstärkung linear verhält. Mit steigendem Basisstrom erhält man folglich auch einen steigenden Kollektorstrom.\\
+Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fig:2}. Dabei wird deutlich, dass die Simulationswerte gut mit den realen Messwerten übereinstimmen. Kleinere Abweichungen sind auf Fertigungstoleranzen sowie auf Temperatureinflüsse zurückzuführen.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -210,7 +205,10 @@ Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuf
     \caption{Übertragungskennlinien (Simulation)}
     \label{fig:2}
 \end{figure}
- Des Weiteren sollte anhand von Simulationsdaten auch die Eingangskennlinie, siehe Abbildung \ref{fig:3} und das Ausgangskennlinienfeld, siehe Abbildung \ref{fig:3} erstellt. werden. Beim Ausgangskennlinienfeld erkennt wann der Transistor in Sättigung geht abhängig von der angelegten Basis-Emitter-Spannung.
+ Des Weiteren sollten anhand von Simulationsdaten auch die Eingangskennlinie sowie das Ausgangskennlinienfeld (siehe Abbildung \ref{fig:3}) erstellt werden.
+ Bei der Eingangskennlinie erkennt man ein exponentielles Verhalten.
+  Am Ausgangskennlinienfeld erkennt man, in Abhängigkeit von der angelegten Basis-Emitter-Spannung,
+   wann der Transistor in die Sättigung geht.
  \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -281,7 +279,7 @@ Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuf
     \caption{Eingangskennlinie \& Ausgangskennlinie (Simulation)}
     \label{fig:3}
 \end{figure}
- Außerdem wurde ein Vierquadranten-Kennlinienfeld aus den Simulationskennlinien erstellt, siehe Abbildung \ref{fig:4}. Dabei befindet sich im 1. Quadranten das Ausgangskennlinienfeld (rot, violett, orange) reduziert auf die Basis-Emitter-Spannungen von \SI{660}{\milli\volt} bis \SI{715}{\milli\volt}. Im 2. Quadranten befindet sich die Stromverstärkungskennlinie (grün) und im 3. Quadranten befindet sich die Eingangskennlinie (blau).
+ Außerdem wurde ein Vierquadranten-Kennlinienfeld aus den Simulationsdaten erstellt, siehe Abbildung \ref{fig:4}. Dabei befindet sich im 1. Quadranten das Ausgangskennlinienfeld (rot, violett, orange), reduziert auf die Basis-Emitter-Spannungen von \SI{660}{\milli\volt} bis \SI{715}{\milli\volt}. Im 2. Quadranten ist die Stromverstärkungskennlinie (grün) dargestellt und im 3. Quadranten befindet sich die Eingangskennlinie (blau).
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -347,8 +345,7 @@ Kleinere Abweichungen sind auf die Fertigung sowie auf die Temperatur zurückzuf
 \label{fig:4}
 \end{figure}
 \section*{3}
-Im letzten Teil des 1. Laborversuch wurde eine Emitterverstärkerschaltung mit Stromgegenkopplung mit 
-Emitter- und Koppelkondensator simuliert, siehe Abbildung \ref{fig:5} und anschließend im Labor aufgebaut und die Spannungsverstärkung gemessen.
+Im letzten Teil des ersten Laborversuchs wurde eine Emitterverstärkerschaltung mit Stromgegenkopplung sowie Emitter- und Koppelkondensator simuliert (siehe Abbildung \ref{fig:5}). Anschließend wurde diese im Labor aufgebaut und die Spannungsverstärkung gemessen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Fotos 1.Labor/Emitterverstärkerschaltung.jpg}
@@ -388,38 +385,18 @@ Emitter- und Koppelkondensator simuliert, siehe Abbildung \ref{fig:5} und anschl
     \caption{Ein- und Ausgangssignal (Simulation)}
     \label{fig:6}
 \end{figure}
-Die Versorgungsspannung der Schaltung beträgt \qty{12}{\volt}. 
-Als Eingangssignal wurde ein Sinussignal mit einer Amplitude von \SI{20}{\milli\volt} und einer Frequenz von \SI{1}{\kilo\hertz} gestellt.
-Der Arbeitspunkt des Ausgangssignal soll \qty{6}{\volt} betragen.
-Die Simulationergebnisse ergeben eine sinusförmiges Ausgangssignal mit einer größeren Amplitude, siehe Abbildung \ref{fig:6}.
-Die Verstärkung der Schaltung beträgt $23,25$, siehe Berechnung \ref{eq:4}. 
+Die Versorgungsspannung der Schaltung beträgt \qty{12}{\volt}. Als Eingangssignal wurde ein Sinussignal mit einer Amplitude von \SI{20}{\milli\volt} und einer Frequenz von \SI{1}{\kilo\hertz} gewählt. Der Arbeitspunkt des Ausgangssignals soll bei \qty{6}{\volt} liegen. Die Simulationsergebnisse zeigen ein sinusförmiges Ausgangssignal mit einer größeren Amplitude, siehe Abbildung \ref{fig:6}. Die Verstärkung der Schaltung beträgt $23,25$, siehe Berechnung \ref{eq:4}. 
 \begin{equation}
     A = \frac{U_{A,PP}}{U_{E,PP}}= \frac{\SI{4.5}{\volt}-\SI{3.57}{\volt}}{\SI{0.02}{\volt}-(-\SI{0.02}{\volt})}=
     \frac{\SI{0.93}{\volt}}{\SI{0.04}{\volt}}=23,25
     \label{eq:4}
 \end{equation}
 
-Die Schaltung wurde im Labor aufgebaut. Das Eingangssignal wurde mit einem Funktionsgenerator erstellt.
-Der Arbeitspunkt wurde mittels eines Potentiometers eingestellt. Anschließend wurde das Ausgangssignal mit dem Oszilloskop gemmessen. 
-Dort ergab sich eine Verstärkung von $21,875$, siehe Berechnung \ref{eq:5}.
+Nach der Simulation wurde die Schaltung im Labor aufgebaut. Das Eingangssignal wurde hierbei mit einem Funktionsgenerator erzeugt und der Arbeitspunkt mittels eines Potentiometers eingestellt. Anschließend wurde das Ausgangssignal mit dem Oszilloskop gemessen. Dabei ergab sich eine Verstärkung von $21,875$, siehe Berechnung \ref{eq:5}.
 \begin{equation}
     A = \frac{U_{A,PP}}{U_{E,PP}}= \frac{525}{24}
     \label{eq:5}
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section*{Diskussion}
+
+

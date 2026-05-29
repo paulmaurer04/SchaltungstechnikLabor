@@ -5,7 +5,65 @@ Hier kommt alles zum dritten Laborversuch
 
 \section*{Kurzzusammenfassung} 
         In diesem Laborversuch wurde eine astabile Multivibratorschaltung 
-        mit einem LM358 Operationsvertärker aufgebaut. 
+        mit einem LM358 Operationsvertärker aufgebaut, siehe Abbildung \ref{fig:7}. 
+\begin{figure}[H]
+        \centering
+        \begin{circuitikz}[european, scale = 1]
+                
+                % 1. Operationsverstärker (OP292) positionieren
+    \node[op amp, noinv input up] (U1) at (0,0) {U1};
+    \node[below=0.9cm, font=\small\sffamily] at (U1.center) {LM358};
+
+    \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25) -- ++(1.5,0) node[ground]{}; % Geht 0.5 nach rechts zur Masse
+    \draw (5, 0.25) to[V, l=V2, a=5] (5, -1.5);
+    
+    % 2. Stromversorgungs-Leitungen für den OPV (weit genug nach oben/unten)
+    \draw (U1.up) -- ++(0,3) coordinate (vup);
+    \draw (U1.down) -- ++(0,-2) coordinate (vdown);
+
+    % 3. Spannungsquellen auf der rechten Seite (sauber ausgerichtet)
+    \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25)
+          to[ground] (5, 0.25)
+          to[V, l=V2, a=5] (5, -1.5);
+          
+    % Leitungen von den Spannungsquellen zu den OPV-Versorgungs-Pins ziehen
+    \draw (vup) -| (5, -2.0);
+    \draw (vdown) -| (5, -1);
+
+    % 4. Invertierender Pfad (Minus-Eingang unten)
+    % Großer Abstand nach links (-3.0) für maximale Übersicht
+    \draw (U1.-) -- ++(-4.0,0) coordinate (in_neg);
+    
+    % C1 nach unten: Name links (_), Wert rechts (^)
+    \draw (in_neg) to[C, l_=C1, a^=10n] ++(0,-3) node[ground]{};
+    
+    % R1 nach oben: Name links (_), Wert rechts (^)
+    \draw (in_neg) to[R, l_=R1, a^=100k] ++(0,3.5) coordinate (r1_top);
+
+    % 5. Nicht-invertierender Pfad (Plus-Eingang oben)
+    % Abstand nach links (-1.5) -> liegt exakt zwischen OPV und R1
+    \draw (U1.+) -- ++(-1.5,0) coordinate (in_pos);
+    
+    % R3 nach unten: Name links (_), Wert rechts (^)
+    \draw (in_pos) to[R, l_=R3, a^=10k] ++(0,-4) node[ground]{};
+    
+    % R2 in die obere Rückkopplungsschleife: Name oben (^), Wert unten (_)
+    \draw (in_pos) -- ++(0,1.5) to[R, l^=R2, a_=100k] ++(3.8,0) coordinate (r2_right);
+
+    % 6. Ausgang des OPVs und Rückkopplungsknoten verbinden
+    \draw (U1.out) -- ++(0.8,0) coordinate (out_node);
+    
+    % Rechtwinklige Anschlüsse der Rückkopplungen an den Ausgangsknoten
+    \draw (out_node) |- (r1_top);
+    \draw (out_node) |- (r2_right);
+    
+    % Kurzes offenes Leitungsende am Ausgang
+    \draw (out_node) -- ++(0.6,0);
+
+        \end{circuitikz}
+        \caption{astabiler Multivibratorschaltung}
+        \label{fig:7}
+\end{figure}
         Diese Schaltung erzeugt ein Rechtecksignal ohne ein externes Eingangssignal.
         Anschließend wurde die Bandbreite des LM358 bei einer Verstärkung von 1
         und die Bandbreite bei einer Verstärkung von 10 gemessen. Zum Schluss wurde die 
@@ -20,18 +78,80 @@ Hier kommt alles zum dritten Laborversuch
         und der negative Anschluss des Kanal 1 war somit \qty{-5}{\volt}. 
         Als Ground wurde der Ausgang der negative Ausgang des Kanal 2 verwendet. 
         Anschließend wurde die Schaltung aufgebaut und mit der Gleichspannungsquelle betrieben. 
-        Mit dem Oszilloskop wurde die Spannung über den Kondensator gemessen und die Spannung am Ausgang des Operationsvertärker, siehe \ref{fig:7}.
+        Mit dem Oszilloskop wurde die Spannung über den Kondensator gemessen und die 
+        Spannung am Ausgang des Operationsvertärker. Dabei erhält man folgendes Signal, siehe \ref{fig:8}.
 \begin{figure}
-
-        
-        \label{fig:7}
+        <%\includegraphics{}[width = 0.5\linewidth]
+        \caption{}
+        \label{fig:8}
 \end{figure}
-        Die Schaltung besteht aus zwei Teilen der Teil des OPV der in Mitkopplung betrieben wird
-        ist ein Schmitt-Trigger. Dieser ermöglicht es das die Schaltung ab einer bestimmten Spannungsschwelle schaltet.
-        Diese Spannungsschwelle berechnet sich mit folgender Formel:
+        Die Schaltung besteht aus zwei Teilen, der Mitkopplungspfad der Schaltung
+        ist ein Schmitt-Trigger. Dieser ermöglicht es das die Schaltung, ab einer bestimmten Spannungsschwelle schaltet.
+        Diese Spannungsschwellen berechnen sich mit folgenden Formeln, \cite{PR_digital}:
         \begin{equation}
-               $ r_1 = $
+                U_{ein,schwelle} = \frac{R_3}{R_2+R_3} \cdot U_{aus,min} = 
+                \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot \qty{-5}{\volt} \approx 
+                \qty{-0.45}{\volt} 
+                \label{eq:6}
         \end{equation}
+        \begin{equation}
+                U_{aus, schwelle} = \frac{R_3}{R_2+R_3} \cdot U_{aus,max} = 
+                \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot \qty{5}{\volt}\approx 
+                \qty{0.45}{\volt} 
+                \label{eq:7}
+        \end{equation}
+        Der Gegenkopplungspfad sorgt durch den Kondensator für das Takten des Umschaltvorgangs. 
+        Wenn der Ausgang auf \qty{5}{\volt} springt fließt Strom durch den Widerstand $R_1$  in den Kondensator.
+        Sobald die Kondensatorspannung die Schwellspannung von \qty{0.45}{\volt} übersteigt, schaltet der OPV-Ausgang auf \qty{-5}{\volt}. 
+        Der Kondensator beginnt sich zu entladen bis er die SChwelle von \qty{-0.45}{\volt} erreicht. 
+        Der Zyklus beginnt dann von vorne. 
+        Mit dem Widerstand $R_1$ und dem Kondensator $C_1$ kann man die Periodendauer steuern.
+        Anschließend wurde die Schaltung in LTspice simuliert. 
+        Dafür wurde die Anfangsbedinung für die Kondensatorspannung auf \qty{5}{\volt} gesetzt.
+        Daraus ergab sich folgender Graph, siehe \ref{fig:9}.
+\begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+        \begin{axis}[
+            width=0.46\textwidth,
+            xlabel={$Zeit$ [t]},
+            ylabel={$Spannung$ [V]},
+            grid=both,
+            minor tick num=1,
+            minor y tick num=4,
+            % Wichtig für LTspice-Export (Tab-getrennt):
+            table/col sep=tab, 
+            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
+            scaled y ticks=true,
+        ]
+        \addplot[
+            color=green,          % Farbe der Linie
+            thick,              % Macht die Linie etwas dicker
+            % Wir definieren hier die Spalten-Indizes:
+            ] table [x expr=\thisrowno{0}, y expr=\thisrowno{1}] {Simulationen 3.Labor/astabilerMultivibrator.txt};
+        \addlegendentry{$U_{aus}$}
+        \addplot[
+            color=red,          % Farbe der Linie
+            thick,              % Macht die Linie etwas dicker
+            % Wir definieren hier die Spalten-Indizes:
+            ] table [x expr=\thisrowno{0}, y expr=\thisrowno{2}] {Simulationen 3.Labor/astabilerMultivibrator.txt};
+            
+        \addlegendentry{$U_C$}
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Ausgangssignale (Messwerte) links, Ausgangssignale (Simulation) rechts}
+        \label{fig:9}
+\end{figure}
+        Bei der Simulation erkennt man deutlich das rechteckige Ausgangssignal (grün), welches eine Amplitude
+         von ungefähr \qty{4}{\volt} auf. 
+         Dies liegt daran dass es sich bei dem LM358 nicht um einen Rail-to-Rail OPV handelt. 
+         Das Spannungssignal (rot) über den Kondensator erreicht eine Amplitude von ungefähr \qty{0.4}{\volt}.
+          Dies entspricht den Berechnungen \ref{eq:6} \ref{eq:7} für die Schwellspannung der Schaltung. 
+        
+
+
+
+
 
 
 
