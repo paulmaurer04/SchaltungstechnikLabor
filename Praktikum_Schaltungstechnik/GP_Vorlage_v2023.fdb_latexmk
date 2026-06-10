@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber GP_Vorlage_v2023"] 1780038550.93195 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1780047529.66795 0
-  "GP_Vorlage_v2023.bcf" 1780047528 108014 9ea1625b5850ce509b6c3ba8c221b6ca "pdflatex"
+["biber GP_Vorlage_v2023"] 1780038550.93195 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1780061307.76656 0
+  "GP_Vorlage_v2023.bcf" 1780061306 108014 9ea1625b5850ce509b6c3ba8c221b6ca "pdflatex"
   "MyBibliography.bib" 1780038495 4475 eb1be0c0beaf74f76fa2a92615e0a9ed ""
   (generated)
   "GP_Vorlage_v2023.bbl"
   "GP_Vorlage_v2023.blg"
   (rewritten before read)
-["pdflatex"] 1780047520.05565 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1780047529.66966 0
+["pdflatex"] 1780061291.0834 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1780061307.76815 0
   "1.Laborversuch.tex" 1780047351 18533 2a2e0290f0c0650e57577b54d187ea8a ""
   "2.Laborversuch.tex" 1777544750 298 06d191838ed332e621d0c6f7f0b6181e ""
   "3.Laborversuch.tex" 1780046081 7504 1a684a83a1800ca0633eddc63ed6a833 ""
-  "4.Laborversuch.tex" 1777544750 173 54580efdef954a44f89d908ac55f28c7 ""
+  "4.Laborversuch.tex" 1780061288 819 01bdde9fad5432b5f5922e226c7ea00b ""
   "Bilder/logo.jpg" 1777544752 87143 6b3a0b12486d478874beee092e7afc64 ""
-  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1777554064 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780061242 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1777553307 28976 5fc3afea1e0956a48cf75470b15a88ac ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1777553309 31952 c7ec8501acfe695613f36a707a4c7155 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1777553314 40136 1b5b64203117adbac7150932904f4189 ""
@@ -287,12 +287,12 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/was/icomma.sty" 1665850770 1018 df058db1896806f044e2233bb506d425 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Fotos 1.Labor/Emitterverstärkerschaltung.jpg" 1777544756 96193 033efa28859115be9ea84f9f32166c96 ""
-  "GP_Vorlage_v2023.aux" 1780047528 3744 cb675d9e66cde8bb33df0585f03b1129 "pdflatex"
+  "GP_Vorlage_v2023.aux" 1780061306 3744 cb675d9e66cde8bb33df0585f03b1129 "pdflatex"
   "GP_Vorlage_v2023.bbl" 1780038709 2070 0d5fa93ebfd89654e54995b8efea2819 "biber GP_Vorlage_v2023"
-  "GP_Vorlage_v2023.out" 1780047528 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
-  "GP_Vorlage_v2023.run.xml" 1780047528 2498 7b2d078865ad0e998e05b06ced612dfa "pdflatex"
+  "GP_Vorlage_v2023.out" 1780061306 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
+  "GP_Vorlage_v2023.run.xml" 1780061307 2498 7b2d078865ad0e998e05b06ced612dfa "pdflatex"
   "GP_Vorlage_v2023.tex" 1780046349 2495 6051aac92221e95d48b683dcf8fc8d12 ""
-  "GP_Vorlage_v2023.toc" 1780047528 302 5f1d99df86243b0e9ad59a6382929c9d "pdflatex"
+  "GP_Vorlage_v2023.toc" 1780061307 302 5f1d99df86243b0e9ad59a6382929c9d "pdflatex"
   "Simulationen 1.Labor/Ausgangskennlinie1.txt" 1777544750 4377 edd1557831c6a7661518d9bab78bfb15 ""
   "Simulationen 1.Labor/Ausgangskennlinie2.txt" 1777544750 4377 dcd0b42580a35af6b698104e0008f9ac ""
   "Simulationen 1.Labor/Ausgangskennlinie3.txt" 1777544750 4377 11b260dd3bd61d4475a6324f28aa98b1 ""
