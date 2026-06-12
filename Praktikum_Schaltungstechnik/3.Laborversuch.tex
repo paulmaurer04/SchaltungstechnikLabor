@@ -78,13 +78,72 @@ Hier kommt alles zum dritten Laborversuch
         und der negative Anschluss des Kanal 1 war somit \qty{-5}{\volt}. 
         Als Ground wurde der Ausgang der negative Ausgang des Kanal 2 verwendet. 
         Anschließend wurde die Schaltung aufgebaut und mit der Gleichspannungsquelle betrieben. 
+        Der verwendete OPV ist vom Typ LM358 und besitzt keine Rail-to-Rail Eigenschaft.
         Mit dem Oszilloskop wurde die Spannung über den Kondensator gemessen und die 
-        Spannung am Ausgang des Operationsvertärker. Dabei erhält man folgendes Signal, siehe \ref{fig:8}.
-\begin{figure}
-        <%\includegraphics{}[width = 0.5\linewidth]
-        \caption{}
-        \label{fig:8}
-\end{figure}
+        Spannung am Ausgang des Operationsverstärker.
+        \subsection*{2}
+        Für die Messung der Bandbreite des LM358 wurde der OPV als Spannungsfolger betrieben. Der invertierende Eingang wurde mit dem Ausgang verbunden. 
+        Der nicht invertierende Eingang wurde mit einem Funktionsgenerator verbunden. Der Ausgang des OPV wurde mit einem Oszilloskop verbunden.
+        Mit dem Funktionsgenerator wurde ein Sinussignal generiert. 
+        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt. 
+        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  \qty{0}{\volt} aufweist. 
+        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
+        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt.
+        Die Frequenz wurde sukzessiv erhöht bis das Ausgangssignal einer Dreiecksignalform ähnelt. 
+        Diese Signalform entsteht, da der OPV eine begrenzte Flankensteilheit (Slew Rate) besitzt. 
+        Für die Messung der Bandbreite desl LM358 bei einer Verstärkung von 10 wurde ein nicht invertierende Verstärkungsschaltung \ref{fig:8} aufgebaut.
+        \begin{figure}[H]
+                \centering
+                \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
+                % OPV platzieren mit invertiertem Eingang unten (noinv input up)
+                \node [op amp, noinv input up] (opamp) at (0,0) {};
+                
+                % Nicht-invertienter Eingang (+) ist jetzt OBEN
+                % Verbindung zur Eingangsspannung
+                \draw (opamp.+) -- (-1.5, 0.5) 
+                        to[short, -o] (-2, 0.5) node[left] {$U_{in}$};
+                        
+                % Invertierender Eingang (-) ist jetzt UNTEN
+                % Pfad nach unten führen zum Rückkoppelnetzwerk
+                \draw (opamp.-) -- (-1.2, -0.5) -- (-1.2, -1.5)
+                        to[R, l=$R_1$] (-1.2, -3) 
+                        to[ground] (-1.2, -3.2);
+                        
+                % Rückkopplung von unten zum Ausgang
+                \draw (-1.2, -1.5) to[R, l=$R_2$] (2.5, -1.5)
+                        -- (2.5, 0) -- (opamp.out);
+
+                \draw (-1.2,-3.2) node[ground]{};
+                        
+                % Ausgangsspannung zeichnen
+                \draw (opamp.out) -- (3, 0) 
+                        to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+
+                \end{circuitikz}
+                \caption{nicht invertierender Verstärkerschaltung}
+                \label{fig:8}
+        \end{figure} 
+        Die Widerstandswerte wurden anhand folgender Formel \ref{eq:8} bestimmt. 
+        Dabei wurde der Widerstand $R_1$ mit \qty{10}{\kilo\ohm} dimensioniert.
+        \begin{equation}
+                A = 1+\frac{R_2}{R_1} = 10 \rightarrow R_2 = (A-1) \cdot R_1 = 9 \cdot \qty{10}{\kilo\ohm} = \qty{90}{\kilo\ohm} 
+                \label{eq:8}
+        \end{equation}
+        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt. 
+        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\sqrt{2}\cdot U_{in}$ aufweist. 
+        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
+        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt.
+        Die Frequenz wurde sukzessiv erhöht bis das Ausgangssignal einer Dreiecksignalform ähnelt. 
+        Diese Signalform entsteht, da der OPV eine begrenzte Flankensteilheit (Slew Rate) besitzt. 
+
+        \subsection*{3}
+        Für die Messung der Input-Offset Spannung, welche sich im \qty{}{\milli\volt} bis \qty{}{\micro\volt} Bereich liegt, wurde wieder eine 
+        nicht invertierende Verstärerschaltung \ref{fig:8}aufgebaut. Diese soll eine sehr große Verstäkung aufweisen um die Input-Offset-Spannung sichtbar zu
+        machen. Der Widerstand $R_1$ wurde in mit \qty{10}{\ohm} dimensioniert. Der Widerstand $R_2$ berechnet sich analog wie in der Formel \ref{eq:8},
+        dabei wird für die Verstärkung $A$ der Wert $1000$ angenommen.
+        Der nicht invertierende Eingang wird auf Ground gesetzt und man misst mit dem Oszilloskop das Ausgangssignal.
+\section*{Diskussion}
+        \subsection*{1}
         Die Schaltung besteht aus zwei Teilen, der Mitkopplungspfad der Schaltung
         ist ein Schmitt-Trigger. Dieser ermöglicht es das die Schaltung, ab einer bestimmten Spannungsschwelle schaltet.
         Diese Spannungsschwellen berechnen sich mit folgenden Formeln, \cite{PR_digital}:
@@ -106,6 +165,24 @@ Hier kommt alles zum dritten Laborversuch
         Der Kondensator beginnt sich zu entladen bis er die SChwelle von \qty{-0.45}{\volt} erreicht. 
         Der Zyklus beginnt dann von vorne. 
         Mit dem Widerstand $R_1$ und dem Kondensator $C_1$ kann man die Periodendauer steuern.
+        Im Labor liefert die Schaltung folgendes Ausgangssignal \ref{fig:10}.
+        \begin{figure}
+                \centering
+                \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/Oszilloskop.jpeg}
+                \caption{Ausgangssignal astabiler Multivibrator}
+                \label{fig:10}
+        \end{figure}
+        In Cyan ist die Spannung über den Kondensator dargestellt und in Gelb die Ausgangsspannung der Schaltung.
+        Der Spannungsverlauf der Kondensatorspannung ähnelt einem Dreiecksignal. Der Grund dafür ist das zu Beginn der 
+        Ladung eines Kondensators exponentielle Ansteigen der Spannung. Die Schwellspannung liegt unterhalb jenen Bereichs bei dem 
+        die Ladungskurve des Kondensators abflacht. 
+        Der Spannungsverlauf der Ausgangsspannung ist eine Rechteckspannung.
+        Das Ausgangssignal des OPV ändert sich bei einer gewissen Schwellspannung. 
+        In der Abbildung erkennt man das die Amplitude der Kondensatorspannung ungefähr \qty{0.5}{\volt} beträgt.
+        Dies bestätigt die erwarteten Schwellspannungen \ref{eq:6} \ref{eq:7}.
+        Das Ausgangssignal besitzt eine Amplitude von ungefähr \qty{4}{\volt}.
+
+
         Anschließend wurde die Schaltung in LTspice simuliert. 
         Dafür wurde die Anfangsbedinung für die Kondensatorspannung auf \qty{5}{\volt} gesetzt.
         Daraus ergab sich folgender Graph, siehe \ref{fig:9}.
@@ -155,4 +232,5 @@ Hier kommt alles zum dritten Laborversuch
 
 
 
-\section*{Diskussion}
+
+
