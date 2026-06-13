@@ -35,7 +35,7 @@ Hier kommt alles zum dritten Laborversuch
     \draw (U1.-) -- ++(-4.0,0) coordinate (in_neg);
     
     % C1 nach unten: Name links (_), Wert rechts (^)
-    \draw (in_neg) to[C, l_=C1, a^=10n] ++(0,-3) node[ground]{};
+    \draw (in_neg) to[C, l_=C1, a^=10nF] ++(0,-3) node[ground]{};
     
     % R1 nach oben: Name links (_), Wert rechts (^)
     \draw (in_neg) to[R, l_=R1, a^=100k] ++(0,3.5) coordinate (r1_top);
@@ -85,13 +85,13 @@ Hier kommt alles zum dritten Laborversuch
         Für die Messung der Bandbreite des LM358 wurde der OPV als Spannungsfolger betrieben. Der invertierende Eingang wurde mit dem Ausgang verbunden. 
         Der nicht invertierende Eingang wurde mit einem Funktionsgenerator verbunden. Der Ausgang des OPV wurde mit einem Oszilloskop verbunden.
         Mit dem Funktionsgenerator wurde ein Sinussignal generiert. 
-        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt. 
-        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  \qty{0}{\volt} aufweist. 
+        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{100}{\milli\volt} und eine Frequenz von \qty{100}{\kilo\hertz} eingestellt. 
+        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\frac{U_{in}}{\sqrt{2}}$ aufweist. 
         Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
-        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt.
-        Die Frequenz wurde sukzessiv erhöht bis das Ausgangssignal einer Dreiecksignalform ähnelt. 
-        Diese Signalform entsteht, da der OPV eine begrenzte Flankensteilheit (Slew Rate) besitzt. 
-        Für die Messung der Bandbreite desl LM358 bei einer Verstärkung von 10 wurde ein nicht invertierende Verstärkungsschaltung \ref{fig:8} aufgebaut.
+        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{2}{\volt} und eine Frequenz von \qty{50}{\kilo\hertz} eingestellt.
+        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\frac{U_{in}}{\sqrt{2}}$ aufweist. 
+        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
+        Für die Messung der Bandbreite des LM358 bei einer Verstärkung von 10 wurde ein nicht invertierende Verstärkungsschaltung \ref{fig:8} aufgebaut.
         \begin{figure}[H]
                 \centering
                 \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
@@ -129,19 +129,55 @@ Hier kommt alles zum dritten Laborversuch
                 A = 1+\frac{R_2}{R_1} = 10 \rightarrow R_2 = (A-1) \cdot R_1 = 9 \cdot \qty{10}{\kilo\ohm} = \qty{90}{\kilo\ohm} 
                 \label{eq:8}
         \end{equation}
-        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt. 
-        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\sqrt{2}\cdot U_{in}$ aufweist. 
-        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
-        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0}{\volt} und eine Frequenz von \qty{0}{\hertz} eingestellt.
+        Für die Messung des Kleinsignals liegt die Eingangs
+        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0.1}{\milli\volt} und eine Frequenz von \qty{50}{\kilo\hertz} eingestellt. 
         Die Frequenz wurde sukzessiv erhöht bis das Ausgangssignal einer Dreiecksignalform ähnelt. 
         Diese Signalform entsteht, da der OPV eine begrenzte Flankensteilheit (Slew Rate) besitzt. 
 
+        
+
         \subsection*{3}
         Für die Messung der Input-Offset Spannung, welche sich im \qty{}{\milli\volt} bis \qty{}{\micro\volt} Bereich liegt, wurde wieder eine 
-        nicht invertierende Verstärerschaltung \ref{fig:8}aufgebaut. Diese soll eine sehr große Verstäkung aufweisen um die Input-Offset-Spannung sichtbar zu
-        machen. Der Widerstand $R_1$ wurde in mit \qty{10}{\ohm} dimensioniert. Der Widerstand $R_2$ berechnet sich analog wie in der Formel \ref{eq:8},
-        dabei wird für die Verstärkung $A$ der Wert $1000$ angenommen.
-        Der nicht invertierende Eingang wird auf Ground gesetzt und man misst mit dem Oszilloskop das Ausgangssignal.
+        nicht invertierende Verstärkerschaltung \ref{fig:8} aufgebaut. Diese soll eine sehr große Verstäkung aufweisen um die Input-Offset-Spannung sichtbar zu
+        machen. Der Widerstand $R_1$ wurde in mit \qty{10}{\ohm} dimensioniert. Der Widerstand $R_2$ wurde mit \qty{10}{\kilo\ohm} angenommen.
+        Dies ergibt eine Verstärkung von $A=1000$.
+        Der nicht invertierende Eingang wird auf Masse gesetzt und man misst mit dem Oszilloskop das Ausgangssignal.
+         \begin{figure}[H]
+                \centering
+                \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
+                % OPV platzieren mit invertiertem Eingang unten (noinv input up)
+                \node [op amp, noinv input up] (opamp) at (0,0) {};
+                
+                % Nicht-invertienter Eingang (+) ist jetzt OBEN
+                % Verbindung zur Eingangsspannung
+                \draw (opamp.+) -- (-1.5, 0.5) 
+                        to[short, -o] (-2, 0.5) node[ground, rotate=270] {};
+                        
+                % Invertierender Eingang (-) ist jetzt UNTEN
+                % Pfad nach unten führen zum Rückkoppelnetzwerk
+                \draw (opamp.-) -- (-1.2, -0.5) -- (-1.2, -1.5)
+                        to[R, l=$R_1$] (-1.2, -3) 
+                        to[ground] (-1.2, -3.2);
+                        
+                % Rückkopplung von unten zum Ausgang
+                \draw (-1.2, -1.5) to[R, l=$R_2$] (2.5, -1.5)
+                        -- (2.5, 0) -- (opamp.out);
+
+                \draw (-1.2,-3.2) node[ground]{};
+                        
+                % Ausgangsspannung zeichnen
+                \draw (opamp.out) -- (3, 0) 
+                        to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+
+                \end{circuitikz}
+                \caption{Messchaltung Input-Offset}
+                \label{fig:8}
+        \end{figure} 
+
+
+
+
+
 \section*{Diskussion}
         \subsection*{1}
         Die Schaltung besteht aus zwei Teilen, der Mitkopplungspfad der Schaltung
@@ -166,7 +202,7 @@ Hier kommt alles zum dritten Laborversuch
         Der Zyklus beginnt dann von vorne. 
         Mit dem Widerstand $R_1$ und dem Kondensator $C_1$ kann man die Periodendauer steuern.
         Im Labor liefert die Schaltung folgendes Ausgangssignal \ref{fig:10}.
-        \begin{figure}
+        \begin{figure}[H]
                 \centering
                 \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/Oszilloskop.jpeg}
                 \caption{Ausgangssignal astabiler Multivibrator}
@@ -181,8 +217,8 @@ Hier kommt alles zum dritten Laborversuch
         In der Abbildung erkennt man das die Amplitude der Kondensatorspannung ungefähr \qty{0.5}{\volt} beträgt.
         Dies bestätigt die erwarteten Schwellspannungen \ref{eq:6} \ref{eq:7}.
         Das Ausgangssignal besitzt eine Amplitude von ungefähr \qty{4}{\volt}.
-
-
+        Dies liegt daran, dass es sich beim LM358 um keinen Rail-to-Rail OPV handelt.
+        Die Frequenz des Ausgangssignals beträgt \qty{2.2}{\kilo\hertz}. 
         Anschließend wurde die Schaltung in LTspice simuliert. 
         Dafür wurde die Anfangsbedinung für die Kondensatorspannung auf \qty{5}{\volt} gesetzt.
         Daraus ergab sich folgender Graph, siehe \ref{fig:9}.
@@ -206,7 +242,7 @@ Hier kommt alles zum dritten Laborversuch
             thick,              % Macht die Linie etwas dicker
             % Wir definieren hier die Spalten-Indizes:
             ] table [x expr=\thisrowno{0}, y expr=\thisrowno{1}] {Simulationen 3.Labor/astabilerMultivibrator.txt};
-        \addlegendentry{$U_{aus}$}
+        \addlegendentry{$U_{Out}$}
         \addplot[
             color=red,          % Farbe der Linie
             thick,              % Macht die Linie etwas dicker
@@ -219,11 +255,46 @@ Hier kommt alles zum dritten Laborversuch
         \caption{Ausgangssignale (Messwerte) links, Ausgangssignale (Simulation) rechts}
         \label{fig:9}
 \end{figure}
-        Bei der Simulation erkennt man deutlich das rechteckige Ausgangssignal (grün), welches eine Amplitude
-         von ungefähr \qty{4}{\volt} auf. 
-         Dies liegt daran dass es sich bei dem LM358 nicht um einen Rail-to-Rail OPV handelt. 
-         Das Spannungssignal (rot) über den Kondensator erreicht eine Amplitude von ungefähr \qty{0.4}{\volt}.
-          Dies entspricht den Berechnungen \ref{eq:6} \ref{eq:7} für die Schwellspannung der Schaltung. 
+        Der Spannungsverlauf des Kondensators und der Ausgangsspannung stimmen mit dem gemesssen Werten überein. 
+        Die Amplitude der Ausgangsspannung beträgt ungefähr \qty{4}{\volt} und die Amplitude der Kondensatorspannung beträgt ungefähr \qty{0.5}{\volt}.
+        Die Frequenz des Ausgangssignal beträgt \qty{2.2}{\kilo\hertz}.
+
+        \subsection*{2}
+        Die Bandbreite ist jener Frequenzbereich bei dem das Eingangssignal nur bis zu $\frac{U_{in}}{\sqrt{2}}$ gedämpft wird. 
+        Bei der Messung der Bandbreite  des OPV erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:1}.
+        \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c|c}
+                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                        \hline
+                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{1.5}{\mega\hertz}\\
+                        \hline
+                        Großsignal &   \qty{2000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        
+                \end{tabular}
+                \caption{Bandbreite Verstäkung 1}
+                \label{tab:1}
+        \end{table}
+        Bei der Messung der Bandbreite des OPV mit einer Verstärkung $A=10$ erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:2}.
+        \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c|c}
+                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                        \hline
+                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{1.5}{\mega\hertz}\\
+                        \hline
+                        Großsignal &   \qty{2000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        
+                \end{tabular}
+                \caption{Bandbreite Verstäkung 10}
+                \label{tab:2}
+        \end{table}
+
+
+        \subsection*{3}
+        Die Input-Offset-Spannung ist die reale Differenzspannung zwischen den Eingangspins des OPV.
+        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}.
+
         
 
 
