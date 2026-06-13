@@ -94,7 +94,7 @@ Hier kommt alles zum dritten Laborversuch
         Für die Messung der Bandbreite des LM358 bei einer Verstärkung von 10 wurde ein nicht invertierende Verstärkungsschaltung \ref{fig:8} aufgebaut.
         \begin{figure}[H]
                 \centering
-                \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
+                         \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
                 % OPV platzieren mit invertiertem Eingang unten (noinv input up)
                 \node [op amp, noinv input up] (opamp) at (0,0) {};
                 
@@ -105,15 +105,15 @@ Hier kommt alles zum dritten Laborversuch
                         
                 % Invertierender Eingang (-) ist jetzt UNTEN
                 % Pfad nach unten führen zum Rückkoppelnetzwerk
-                \draw (opamp.-) -- (-1.2, -0.5) -- (-1.2, -1.5)
-                        to[R, l=$R_1$] (-1.2, -3) 
-                        to[ground] (-1.2, -3.2);
+                \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
+                        to[R, l=$R_1$] (-1.2, -3.5) 
+                        to[ground] (-1.2, -3.5);
                         
                 % Rückkopplung von unten zum Ausgang
-                \draw (-1.2, -1.5) to[R, l=$R_2$] (2.5, -1.5)
+                 \draw (-1.2, -2) -- (2.5, -2)
                         -- (2.5, 0) -- (opamp.out);
 
-                \draw (-1.2,-3.2) node[ground]{};
+                \draw (-1.2,-3.5) node[ground]{};
                         
                 % Ausgangsspannung zeichnen
                 \draw (opamp.out) -- (3, 0) 
@@ -144,33 +144,33 @@ Hier kommt alles zum dritten Laborversuch
         Der nicht invertierende Eingang wird auf Masse gesetzt und man misst mit dem Oszilloskop das Ausgangssignal.
          \begin{figure}[H]
                 \centering
-                \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
+                  \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
                 % OPV platzieren mit invertiertem Eingang unten (noinv input up)
                 \node [op amp, noinv input up] (opamp) at (0,0) {};
                 
                 % Nicht-invertienter Eingang (+) ist jetzt OBEN
                 % Verbindung zur Eingangsspannung
                 \draw (opamp.+) -- (-1.5, 0.5) 
-                        to[short, -o] (-2, 0.5) node[ground, rotate=270] {};
+                        to[short, -o] (-2, 0.5) node[ground, rotate =270] {};
                         
                 % Invertierender Eingang (-) ist jetzt UNTEN
                 % Pfad nach unten führen zum Rückkoppelnetzwerk
-                \draw (opamp.-) -- (-1.2, -0.5) -- (-1.2, -1.5)
-                        to[R, l=$R_1$] (-1.2, -3) 
-                        to[ground] (-1.2, -3.2);
+                \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
+                        to[R, l=$R_1$] (-1.2, -3.5) 
+                        to[ground] (-1.2, -3.5);
                         
                 % Rückkopplung von unten zum Ausgang
-                \draw (-1.2, -1.5) to[R, l=$R_2$] (2.5, -1.5)
+                 \draw (-1.2, -2) -- (2.5, -2)
                         -- (2.5, 0) -- (opamp.out);
 
-                \draw (-1.2,-3.2) node[ground]{};
+                \draw (-1.2,-3.5) node[ground]{};
                         
                 % Ausgangsspannung zeichnen
                 \draw (opamp.out) -- (3, 0) 
                         to[short, -o] (3.5, 0) node[right] {$U_{out}$};
 
                 \end{circuitikz}
-                \caption{Messchaltung Input-Offset}
+                \caption{Messschaltung Input-Offset}
                 \label{fig:8}
         \end{figure} 
 
@@ -281,19 +281,29 @@ Hier kommt alles zum dritten Laborversuch
                 \begin{tabular}{c|c|c}
                         Signaltyp  &    Amplitude       &       Grenzfrequenz \\
                         \hline
-                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{1.5}{\mega\hertz}\\
+                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{110}{\kilo\hertz}\\
                         \hline
-                        Großsignal &   \qty{2000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        Großsignal &   \qty{2000}{\milli\volt} & \qty{10}{\kilo\hertz}\\
                         
                 \end{tabular}
                 \caption{Bandbreite Verstäkung 10}
                 \label{tab:2}
         \end{table}
+        Die LTspice Simulation ergibt bei keiner Verstäkung eine Bandbreite von \qty{1.8}{\mega\hertz}.
+        Bei einer Verstärkung von $A=10$ erhält man eine Bandbreite von \qty{110}{\kilo\hertz}.
 
 
         \subsection*{3}
         Die Input-Offset-Spannung ist die reale Differenzspannung zwischen den Eingangspins des OPV.
-        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}.
+        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}. Dies stimmt auch mit dem erwarteten Wert von \qty{3}{\milli\volt}aus dem Datenblatt \cite{datasheet}.
+        Die LTSpice Simulation \ref{fig:10} ergab einen Input-Offset-Spannung von \qty{2.6}{\milli\volt} und eine Input-Bias-Current von 
+        \qty{-20}{\nano\ampere}.
+        \begin{figure}[H]
+                \centering
+                \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/LTspice1.jpg}
+                \caption{Simulation des LM358}
+                \label{fig:10}
+        \end{figure}
 
         
 
