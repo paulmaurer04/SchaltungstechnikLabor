@@ -1,15 +1,15 @@
 # Fdb version 4
-["biber GP_Vorlage_v2023"] 1781365147.58155 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1781366980.66512 0
-  "GP_Vorlage_v2023.bcf" 1781366980 108078 16d4ea911acdad9adf77350b7e45c290 "pdflatex"
+["biber GP_Vorlage_v2023"] 1781365147.58155 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1781440758.54256 0
+  "GP_Vorlage_v2023.bcf" 1781440757 108078 16d4ea911acdad9adf77350b7e45c290 "pdflatex"
   "MyBibliography.bib" 1781363721 4672 0d01ee53964a6da61d647a88684b9be3 ""
   (generated)
   "GP_Vorlage_v2023.bbl"
   "GP_Vorlage_v2023.blg"
   (rewritten before read)
-["pdflatex"] 1781366972.62785 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1781366980.66657 0
+["pdflatex"] 1781440748.50928 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1781440758.54407 0
   "1.Laborversuch.tex" 1780047351 18533 2a2e0290f0c0650e57577b54d187ea8a ""
   "2.Laborversuch.tex" 1777544750 298 06d191838ed332e621d0c6f7f0b6181e ""
-  "3.Laborversuch.tex" 1781366971 17050 dc926a82a8b03c46148fe431d23a17e6 ""
+  "3.Laborversuch.tex" 1781440747 18855 c7ba25922183231425f2b0b81a7cf0ed ""
   "4.Laborversuch.tex" 1780562273 176 9c3bef09ad5fea0c36ba3c2889975410 ""
   "Bilder/logo.jpg" 1777544752 87143 6b3a0b12486d478874beee092e7afc64 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780562452 83486 9208647d054da4672a050e7ed94c9aa5 ""
@@ -297,12 +297,12 @@
   "Fotos 1.Labor/Emitterverstärkerschaltung.jpg" 1777544756 96193 033efa28859115be9ea84f9f32166c96 ""
   "Fotos 3.Labor/LTspice1.jpg" 1781363995 82783 5ca3dc7c13afb0d5117627a65eda33c3 ""
   "Fotos 3.Labor/Oszilloskop.jpeg" 1781278097 162324 4284afeb1dba189c7a2f290a75a9a282 ""
-  "GP_Vorlage_v2023.aux" 1781366980 5058 d5250dba29f0bd6d2f9359f2f8376f1e "pdflatex"
+  "GP_Vorlage_v2023.aux" 1781440757 5570 e95b863f5058e5fb47df64f98d3a3a37 "pdflatex"
   "GP_Vorlage_v2023.bbl" 1781365150 3050 1453334adae5b705afb13cef540442a3 "biber GP_Vorlage_v2023"
-  "GP_Vorlage_v2023.out" 1781366980 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
-  "GP_Vorlage_v2023.run.xml" 1781366980 2498 888193453135d72031d84206aa1dcfc5 "pdflatex"
+  "GP_Vorlage_v2023.out" 1781440757 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
+  "GP_Vorlage_v2023.run.xml" 1781440757 2498 888193453135d72031d84206aa1dcfc5 "pdflatex"
   "GP_Vorlage_v2023.tex" 1780046349 2495 6051aac92221e95d48b683dcf8fc8d12 ""
-  "GP_Vorlage_v2023.toc" 1781366980 303 3495a4c9a269f95c0d81f9b4f8352765 "pdflatex"
+  "GP_Vorlage_v2023.toc" 1781440757 303 3495a4c9a269f95c0d81f9b4f8352765 "pdflatex"
   "Simulationen 1.Labor/Ausgangskennlinie1.txt" 1777544750 4377 edd1557831c6a7661518d9bab78bfb15 ""
   "Simulationen 1.Labor/Ausgangskennlinie2.txt" 1777544750 4377 dcd0b42580a35af6b698104e0008f9ac ""
   "Simulationen 1.Labor/Ausgangskennlinie3.txt" 1777544750 4377 11b260dd3bd61d4475a6324f28aa98b1 ""

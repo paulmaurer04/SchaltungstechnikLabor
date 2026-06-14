@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.30)  13 JUN 2026 18:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.30)  14 JUN 2026 14:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -877,6 +877,9 @@ Package babel Info: 'ngerman' activates 'german' shorthands.
 LaTeX Warning: Label `fig:8' multiply defined.
 
 
+LaTeX Warning: Label `tab:1' multiply defined.
+
+
 LaTeX Warning: Label `fig:10' multiply defined.
 
 )
@@ -1111,24 +1114,38 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.257 \end{figure}
-                   <./Fotos 3.Labor/Oszilloskop.jpeg>] [10
+                   <./Fotos 3.Labor/Oszilloskop.jpeg>]
+
+LaTeX Warning: Reference `tab:2' on page 10 undefined on input line 278.
+
+[10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.292         D
-               ie LTspice Simulation ergibt bei keiner Verstäkung eine Band...
+               ie LTspice Simulation ergibt bei keiner Verstäkung folgende ...
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.292         D
-               ie LTspice Simulation ergibt bei keiner Verstäkung eine Band...]
-<Fotos 3.Labor/LTspice1.jpg, id=164, 587.796pt x 299.31825pt>
+               ie LTspice Simulation ergibt bei keiner Verstäkung folgende ...]
+<Fotos 3.Labor/LTspice1.jpg, id=165, 587.796pt x 299.31825pt>
 File: Fotos 3.Labor/LTspice1.jpg Graphic file (type jpg)
 <use Fotos 3.Labor/LTspice1.jpg>
-Package pdftex.def Info: Fotos 3.Labor/LTspice1.jpg  used on input line 303.
+Package pdftex.def Info: Fotos 3.Labor/LTspice1.jpg  used on input line 331.
 (pdftex.def)             Requested size: 227.62206pt x 115.91154pt.
 ) (4.Laborversuch.tex [11
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1 \newpage
+            
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1 \newpage
+            
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1 \newpage
@@ -1161,17 +1178,17 @@ Package logreq Info: Writing requests to 'GP_Vorlage_v2023.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64136 strings out of 467871
- 1643851 string characters out of 5418860
- 3091672 words of memory out of 5000000
- 92235 multiletter control sequences out of 15000+600000
+ 64140 strings out of 467871
+ 1643879 string characters out of 5418860
+ 3091764 words of memory out of 5000000
+ 92237 multiletter control sequences out of 15000+600000
  649524 words of font info for 98 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  99i,21n,118p,842b,2604s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on GP_Vorlage_v2023.pdf (13 pages, 720052 bytes).
+Output written on GP_Vorlage_v2023.pdf (13 pages, 721473 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

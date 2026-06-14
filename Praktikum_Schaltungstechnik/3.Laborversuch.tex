@@ -269,33 +269,61 @@ Hier kommt alles zum dritten Laborversuch
                         \hline
                         Kleinsignal &   \qty{100}{\milli\volt} & \qty{1.5}{\mega\hertz}\\
                         \hline
-                        Großsignal &   \qty{2000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        Großsignal &   \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
                         
                 \end{tabular}
-                \caption{Bandbreite Verstäkung 1}
+                \caption{Messung der Bandbreite, Verstäkung 1}
                 \label{tab:1}
         \end{table}
         Bei der Messung der Bandbreite des OPV mit einer Verstärkung $A=10$ erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:2}.
-        \begin{table}[H]
+         \begin{table}[H]
                 \centering
                 \begin{tabular}{c|c|c}
                         Signaltyp  &    Amplitude       &       Grenzfrequenz \\
                         \hline
                         Kleinsignal &   \qty{100}{\milli\volt} & \qty{110}{\kilo\hertz}\\
                         \hline
-                        Großsignal &   \qty{2000}{\milli\volt} & \qty{10}{\kilo\hertz}\\
+                        Großsignal &   \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
                         
                 \end{tabular}
-                \caption{Bandbreite Verstäkung 10}
-                \label{tab:2}
+                \caption{Messung der Bandbreite, Verstäkung 10}
+                \label{tab:1}
         \end{table}
-        Die LTspice Simulation ergibt bei keiner Verstäkung eine Bandbreite von \qty{1.8}{\mega\hertz}.
-        Bei einer Verstärkung von $A=10$ erhält man eine Bandbreite von \qty{110}{\kilo\hertz}.
-
+        Die LTspice Simulation ergibt bei keiner Verstäkung folgende Bandbreiten, siehe Tabelle \ref{tab:3}.
+        Dabei beträgt die Amplitude bei der Kleinsignalsimulation \qty{1}{\volt} da bei einer AC-Simulation die Slew-Rate nicht berücksichtigt wird.
+         \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c|c}
+                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                        \hline
+                        Kleinsignal &   \qty{1}{\volt} & \qty{1.5}{\mega\hertz}\\
+                        \hline
+                        Großsignal &   \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        
+                \end{tabular}
+                \caption{Simulation der Bandbreite, Verstäkung 1}
+                \label{tab:3}
+        \end{table}
+        Bei der Simulation des Großsignal geht der OPV bei ungefähr \qty{70}{\kilo\hertz} in eine Dreieckssignalform über, da er in den durch die Slew-Rate begrenzten 
+        Bereich geht. Dies konnten wir bei den Messungen nicht feststellen. Die Amplitude nimmt bei \qty{180}{\kilo\hertz} um den Faktor $\frac{1}{\sqrt{2}}$ ab.
+         von \qty{1.8}{\mega\hertz}.
+        Bei einer Verstärkung von $A=10$ erhält man folgende Bandbreite für das Kleinsignal, siehe Tabelle \ref{tab:4}.
+         \begin{table}[H]
+                \centering
+                \begin{tabular}{c|c|c}
+                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                        \hline
+                        Kleinsignal &   \qty{1}{\volt} & \qty{110}{\kilo\hertz}\\
+                \end{tabular}
+                \caption{Simulation der Bandbreite, Verstäkung 10}
+                \label{tab:4}
+        \end{table}
+        Das Ausgangssignal des Großsignals ist aufgrund der Slew-Rate begrenzt. Dies deckt sich auch mit den gemessenen Werten des Großsignals 
+        bei einer Verstäkung $A=10$.
 
         \subsection*{3}
         Die Input-Offset-Spannung ist die reale Differenzspannung zwischen den Eingangspins des OPV.
-        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}. Dies stimmt auch mit dem erwarteten Wert von \qty{3}{\milli\volt}aus dem Datenblatt \cite{datasheet}.
+        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}. Dies stimmt auch mit dem erwarteten Wert von \qty{3}{\milli\volt} aus dem Datenblatt \cite{datasheet}.
         Die LTSpice Simulation \ref{fig:10} ergab einen Input-Offset-Spannung von \qty{2.6}{\milli\volt} und eine Input-Bias-Current von 
         \qty{-20}{\nano\ampere}.
         \begin{figure}[H]
