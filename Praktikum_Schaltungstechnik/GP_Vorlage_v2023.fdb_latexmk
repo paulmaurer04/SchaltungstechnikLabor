@@ -1,15 +1,15 @@
 # Fdb version 4
-["biber GP_Vorlage_v2023"] 1781622179.12467 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1781627881.8987 0
-  "GP_Vorlage_v2023.bcf" 1781627881 108142 b75390d202fc79b8957641ba83602c4a "pdflatex"
+["biber GP_Vorlage_v2023"] 1781622179.12467 "GP_Vorlage_v2023.bcf" "GP_Vorlage_v2023.bbl" "GP_Vorlage_v2023" 1781628740.72941 0
+  "GP_Vorlage_v2023.bcf" 1781628740 108142 b75390d202fc79b8957641ba83602c4a "pdflatex"
   "MyBibliography.bib" 1781363721 4672 0d01ee53964a6da61d647a88684b9be3 ""
   (generated)
   "GP_Vorlage_v2023.bbl"
   "GP_Vorlage_v2023.blg"
   (rewritten before read)
-["pdflatex"] 1781627873.60762 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1781627881.90008 0
-  "1.Laborversuch.tex" 1781620922 18911 ec871a79e1e90eb0f1f72bf7cf285b18 ""
+["pdflatex"] 1781628733.49654 "c:/Users/User/Documents/GitHub/SchaltungstechnikLabor/Praktikum_Schaltungstechnik/GP_Vorlage_v2023.tex" "GP_Vorlage_v2023.pdf" "GP_Vorlage_v2023" 1781628740.73174 0
+  "1.Laborversuch.tex" 1781628493 16976 d6595e67c4e0c3b699e6ea0d1315cb02 ""
   "2.Laborversuch.tex" 1777544750 298 06d191838ed332e621d0c6f7f0b6181e ""
-  "3.Laborversuch.tex" 1781627872 19954 3a86ada8dbd5d163766b89c176515692 ""
+  "3.Laborversuch.tex" 1781628725 17559 ffa13385a3eaa17e65d58b64d0837024 ""
   "4.Laborversuch.tex" 1780562273 176 9c3bef09ad5fea0c36ba3c2889975410 ""
   "Bilder/logo.jpg" 1777544752 87143 6b3a0b12486d478874beee092e7afc64 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780562452 83486 9208647d054da4672a050e7ed94c9aa5 ""
@@ -17,6 +17,7 @@
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1777553309 31952 c7ec8501acfe695613f36a707a4c7155 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1777553314 40136 1b5b64203117adbac7150932904f4189 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/eccc1095.pk" 1781363748 27712 7d5800291dad427c28778f73d7231930 ""
+  "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm0800.pk" 1781628503 19080 f443094067b8c7acd75887500f36076c ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1095.pk" 1777553310 26228 b0a7ad87b9404a25e1731640c3c764fb ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1777553316 28440 2b186475ea51c81607dc1fc36d47d772 ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk" 1777553318 42516 6b0df58fc6ef946503c6cadad9413d6a ""
@@ -297,12 +298,12 @@
   "Fotos 1.Labor/Emitterverstärkerschaltung.jpg" 1777544756 96193 033efa28859115be9ea84f9f32166c96 ""
   "Fotos 3.Labor/LTspice1.jpg" 1781363995 82783 5ca3dc7c13afb0d5117627a65eda33c3 ""
   "Fotos 3.Labor/Oszilloskop.jpeg" 1781278097 162324 4284afeb1dba189c7a2f290a75a9a282 ""
-  "GP_Vorlage_v2023.aux" 1781627881 5279 5b2daf429ae624f96f1aee1c24978c22 "pdflatex"
+  "GP_Vorlage_v2023.aux" 1781628740 5710 0aa2e3f1312f7e49002739808d80763f "pdflatex"
   "GP_Vorlage_v2023.bbl" 1781622192 3050 1453334adae5b705afb13cef540442a3 "biber GP_Vorlage_v2023"
-  "GP_Vorlage_v2023.out" 1781627881 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
-  "GP_Vorlage_v2023.run.xml" 1781627881 2498 7b2d078865ad0e998e05b06ced612dfa "pdflatex"
+  "GP_Vorlage_v2023.out" 1781628740 412 2b787092fde3bbfb4aa19a6d8ed015c6 "pdflatex"
+  "GP_Vorlage_v2023.run.xml" 1781628740 2498 7b2d078865ad0e998e05b06ced612dfa "pdflatex"
   "GP_Vorlage_v2023.tex" 1781620493 2466 70d88809583971b441191fb14bd91383 ""
-  "GP_Vorlage_v2023.toc" 1781627881 303 77e1b784658beffe7cd11e59b25fa4bc "pdflatex"
+  "GP_Vorlage_v2023.toc" 1781628740 303 77e1b784658beffe7cd11e59b25fa4bc "pdflatex"
   "Simulationen 1.Labor/Ausgangskennlinie1.txt" 1777544750 4377 edd1557831c6a7661518d9bab78bfb15 ""
   "Simulationen 1.Labor/Ausgangskennlinie2.txt" 1777544750 4377 dcd0b42580a35af6b698104e0008f9ac ""
   "Simulationen 1.Labor/Ausgangskennlinie3.txt" 1777544750 4377 11b260dd3bd61d4475a6324f28aa98b1 ""

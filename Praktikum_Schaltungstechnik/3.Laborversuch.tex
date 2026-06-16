@@ -1,344 +1,252 @@
 \newpage
-
 \section{Laborversuch}
 
 \section*{Kurzzusammenfassung} 
-        In diesem Laborversuch wurde eine astabile Multivibratorschaltung 
-        mit einem LM358 Operationsvertärker aufgebaut, siehe Abbildung \ref{fig:7}. 
+In diesem Laborversuch wurde eine astabile Multivibratorschaltung mit einem Operationsverstärker (OPV) vom Typ LM358 aufgebaut (siehe Abbildung \ref{fig:7}). 
 \begin{figure}[H]
         \centering
         \begin{circuitikz}[european, scale = 1]
-                
-                % 1. Operationsverstärker (OP292) positionieren
-    \node[op amp, noinv input up] (U1) at (0,0) {U1};
-    \node[below=0.9cm, font=\small\sffamily] at (U1.center) {LM358};
+            % 1. Operationsverstärker (OP292) positionieren
+            \node[op amp, noinv input up] (U1) at (0,0) {U1};
+            \node[below=0.9cm, font=\small\sffamily] at (U1.center) {LM358};
 
-    \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25) -- ++(1.5,0) node[ground]{}; % Geht 0.5 nach rechts zur Masse
-    \draw (5, 0.25) to[V, l=V2, a=5] (5, -1.5);
-    
-    % 2. Stromversorgungs-Leitungen für den OPV (weit genug nach oben/unten)
-    \draw (U1.up) -- ++(0,3) coordinate (vup);
-    \draw (U1.down) -- ++(0,-2) coordinate (vdown);
+            \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25) -- ++(1.5,0) node[ground]{}; 
+            \draw (5, 0.25) to[V, l=V2, a=5] (5, -1.5);
+            
+            % 2. Stromversorgungs-Leitungen für den OPV
+            \draw (U1.up) -- ++(0,3) coordinate (vup);
+            \draw (U1.down) -- ++(0,-2) coordinate (vdown);
 
-    % 3. Spannungsquellen auf der rechten Seite (sauber ausgerichtet)
-    \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25)
-          to[ground] (5, 0.25)
-          to[V, l=V2, a=5] (5, -1.5);
-          
-    % Leitungen von den Spannungsquellen zu den OPV-Versorgungs-Pins ziehen
-    \draw (vup) -| (5, -2.0);
-    \draw (vdown) -| (5, -1);
+            % 3. Spannungsquellen auf der rechten Seite
+            \draw (5, 2.0) to[V, l=V1, a=5] (5, 0.25)
+                  to[ground] (5, 0.25)
+                  to[V, l=V2, a=5] (5, -1.5);
+                  
+            % Leitungen von den Spannungsquellen zu den OPV-Versorgungs-Pins
+            \draw (vup) -| (5, -2.0);
+            \draw (vdown) -| (5, -1);
 
-    % 4. Invertierender Pfad (Minus-Eingang unten)
-    % Großer Abstand nach links (-3.0) für maximale Übersicht
-    \draw (U1.-) -- ++(-4.0,0) coordinate (in_neg);
-    
-    % C1 nach unten: Name links (_), Wert rechts (^)
-    \draw (in_neg) to[C, l_=C1, a^=10nF] ++(0,-3) node[ground]{};
-    
-    % R1 nach oben: Name links (_), Wert rechts (^)
-    \draw (in_neg) to[R, l_=R1, a^=100k] ++(0,3.5) coordinate (r1_top);
+            % 4. Invertierender Pfad
+            \draw (U1.-) -- ++(-4.0,0) coordinate (in_neg);
+            
+            % C1 nach unten
+            \draw (in_neg) to[C, l_=C1, a^=10nF] ++(0,-3) node[ground]{};
+            
+            % R1 nach oben
+            \draw (in_neg) to[R, l_=R1, a^=100k] ++(0,3.5) coordinate (r1_top);
 
-    % 5. Nicht-invertierender Pfad (Plus-Eingang oben)
-    % Abstand nach links (-1.5) -> liegt exakt zwischen OPV und R1
-    \draw (U1.+) -- ++(-1.5,0) coordinate (in_pos);
-    
-    % R3 nach unten: Name links (_), Wert rechts (^)
-    \draw (in_pos) to[R, l_=R3, a^=10k] ++(0,-4) node[ground]{};
-    
-    % R2 in die obere Rückkopplungsschleife: Name oben (^), Wert unten (_)
-    \draw (in_pos) -- ++(0,1.5) to[R, l^=R2, a_=100k] ++(3.8,0) coordinate (r2_right);
+            % 5. Nicht-invertierender Pfad
+            \draw (U1.+) -- ++(-1.5,0) coordinate (in_pos);
+            
+            % R3 nach unten
+            \draw (in_pos) to[R, l_=R3, a^=10k] ++(0,-4) node[ground]{};
+            
+            % R2 in die obere Rückkopplungsschleife
+            \draw (in_pos) -- ++(0,1.5) to[R, l^=R2, a_=100k] ++(3.8,0) coordinate (r2_right);
 
-    % 6. Ausgang des OPVs und Rückkopplungsknoten verbinden
-    \draw (U1.out) -- ++(0.8,0) coordinate (out_node);
-    
-    % Rechtwinklige Anschlüsse der Rückkopplungen an den Ausgangsknoten
-    \draw (out_node) |- (r1_top);
-    \draw (out_node) |- (r2_right);
-    
-    % Kurzes offenes Leitungsende am Ausgang
-    \draw (out_node) -- ++(0.6,0);
-
+            % 6. Ausgang des OPVs und Rückkopplungsknoten verbinden
+            \draw (U1.out) -- ++(0.8,0) coordinate (out_node);
+            
+            % Rechtwinklige Anschlüsse der Rückkopplungen an den Ausgangsknoten
+            \draw (out_node) |- (r1_top);
+            \draw (out_node) |- (r2_right);
+            
+            % Kurzes offenes Leitungsende am Ausgang
+            \draw (out_node) -- ++(0.6,0);
         \end{circuitikz}
-        \caption{astabiler Multivibratorschaltung}
+        \caption{Schaltplan des astabilen Multivibrators}
         \label{fig:7}
 \end{figure}
-        Diese Schaltung erzeugt ein Rechtecksignal ohne ein externes Eingangssignal.
-        Anschließend wurde die Bandbreite des LM358 bei einer Verstärkung von 1
-        und die Bandbreite bei einer Verstärkung von 10 gemessen. Zum Schluss wurde die 
-        Input-Offset-Voltage des OPV gemessen.
+Diese Schaltung erzeugt ein periodisches Rechtecksignal autark ohne externes Eingangssignal. Anschließend wurde die Bandbreite des LM358 sowohl bei einer Spannungsverstärkung von $A = 1$ als auch bei $A = 10$ messtechnisch ermittelt. Abschließend wurde die Eingangs-Offset-Spannung (Input Offset Voltage) des Operationsverstärkers bestimmt.
+
 \section*{Durchführung} 
-        \subsection*{1}
-        Zu Beginn wurde die Schaltung des astabilen Multivibrator aufgebaut. 
-        Dafür wurde eine negative Spannung von \qty{5}{\volt} benötigt. Diese wurde mithilfe 
-        von einer 2-Kanal-Gleichsspannungsversorgung, welche galvanisch getrennte Kanäle besitzt, 
-        erzeugt. Dabei wurde der positive Anschluss des Kanal 1 
-        mit dem negativen Anschluss des Kanal 2 verbunden. Der positive Anschluss des Kanal 2 war somit \qty{5}{\volt}  
-        und der negative Anschluss des Kanal 1 war somit \qty{-5}{\volt}. 
-        Als Ground wurde der Ausgang der negative Ausgang des Kanal 2 verwendet. 
-        Anschließend wurde die Schaltung aufgebaut und mit der Gleichspannungsquelle betrieben. 
-        Der verwendete OPV ist vom Typ LM358 und besitzt keine Rail-to-Rail Eigenschaft.
-        Mit dem Oszilloskop wurde die Spannung über den Kondensator gemessen und die 
-        Spannung am Ausgang des Operationsverstärker.
-        \subsection*{2}
-        Für die Messung der Bandbreite des LM358 wurde der OPV als Spannungsfolger betrieben. Der invertierende Eingang wurde mit dem Ausgang verbunden. 
-        Der nicht invertierende Eingang wurde mit einem Funktionsgenerator verbunden. Der Ausgang des OPV wurde mit einem Oszilloskop verbunden.
-        Mit dem Funktionsgenerator wurde ein Sinussignal generiert. 
-        Für die Messung des Kleinsignals wurde als Amplitude eine Spannung von \qty{100}{\milli\volt} und eine Frequenz von \qty{100}{\kilo\hertz} eingestellt. 
-        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\frac{U_{in}}{\sqrt{2}}$ aufweist. 
-        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
-        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{2}{\volt} und eine Frequenz von \qty{50}{\kilo\hertz} eingestellt.
-        Die Frequenz  wurde sukzessiv erhöht bis die Ausgangsamplitude am Oszilloskop eine Amplitude von  $\frac{U_{in}}{\sqrt{2}}$ aufweist. 
-        Dies entspricht einer Dämpfung von \qty{-3}{\decibel}.
-        Für die Messung der Bandbreite des LM358 bei einer Verstärkung von 10 wurde ein nicht invertierende Verstärkungsschaltung \ref{fig:8} aufgebaut.
-        \begin{figure}[H]
-                \centering
-                         \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
-                % OPV platzieren mit invertiertem Eingang unten (noinv input up)
-                \node [op amp, noinv input up] (opamp) at (0,0) {};
-                
-                % Nicht-invertienter Eingang (+) ist jetzt OBEN
-                % Verbindung zur Eingangsspannung
-                \draw (opamp.+) -- (-1.5, 0.5) 
-                        to[short, -o] (-2, 0.5) node[left] {$U_{in}$};
-                        
-                % Invertierender Eingang (-) ist jetzt UNTEN
-                % Pfad nach unten führen zum Rückkoppelnetzwerk
-                \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
-                        to[R, l=$R_1$] (-1.2, -3.5) 
-                        to[ground] (-1.2, -3.5);
-                        
-                % Rückkopplung von unten zum Ausgang
-                 \draw (-1.2, -2) -- (2.5, -2)
-                        -- (2.5, 0) -- (opamp.out);
+\subsection*{1}
+Zu Beginn wurde die Schaltung des astabilen Multivibrators aufgebaut. Für den Betrieb wurde eine symmetrische Versorgungsspannung von $\pm\qty{5}{\volt}$ benötigt. Diese wurde mithilfe eines Labor-Gleichspannungsnetzgeräts mit zwei galvanisch getrennten Kanälen erzeugt. Hierzu wurde der positive Anschluss von Kanal 1 mit dem negativen Anschluss von Kanal 2 verbunden. Der positive Anschluss von Kanal 2 lieferte somit $+\qty{5}{\volt}$, während der negative Anschluss von Kanal 1 $-\qty{5}{\volt}$ bereitstellte. Als Bezugspotenzial (Masse / Ground) diente der gemeinsame Verbindungspunkt der beiden Kanäle.
 
-                \draw (-1.2,-3.5) node[ground]{};
-                        
-                % Ausgangsspannung zeichnen
-                \draw (opamp.out) -- (3, 0) 
-                        to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+Nach der Inbetriebnahme der Schaltung wurden die Signalverläufe analysiert. Der verwendete OPV vom Typ LM358 besitzt keine Rail-to-Rail-Eigenschaften. Mithilfe des Oszilloskops wurden zeitgleich die Spannung über dem Kondensator $C_1$ sowie die Ausgangsspannung des Operationsverstärkers abgegriffen.
 
-                \end{circuitikz}
-                \caption{nicht invertierender Verstärkerschaltung}
-                \label{fig:8}
-        \end{figure} 
-        Die Widerstandswerte wurden anhand folgender Formel \ref{eq:8} bestimmt. 
-        Dabei wurde der Widerstand $R_1$ mit \qty{10}{\kilo\ohm} dimensioniert.
-        \begin{equation}
-                A = 1+\frac{R_2}{R_1} = 10 \rightarrow R_2 = (A-1) \cdot R_1 = 9 \cdot \qty{10}{\kilo\ohm} = \qty{90}{\kilo\ohm} 
-                \label{eq:8}
-        \end{equation}
-        Für die Messung des Kleinsignals liegt die Eingangs
-        Für die Messung des Großsignals wurde als Amplitude eine Spannung von \qty{0.1}{\milli\volt} und eine Frequenz von \qty{50}{\kilo\hertz} eingestellt. 
-        Die Frequenz wurde sukzessiv erhöht bis das Ausgangssignal einer Dreiecksignalform ähnelt. 
-        Diese Signalform entsteht, da der OPV eine begrenzte Flankensteilheit (Slew Rate) besitzt. 
+\subsection*{2}
+Für die Bestimmung der Bandbreite des LM358 wurde der OPV zunächst als Spannungsfolger (Verstärkung $A = 1$) konfiguriert, indem der invertierende Eingang direkt mit dem Ausgang rückgekoppelt wurde. Der nicht-invertierende Eingang wurde speisungsseitig an einen Funktionsgenerator angeschlossen, während der Ausgang mit dem Oszilloskop verbunden wurde. Der Funktionsgenerator speiste ein sinusförmiges Signal ein.
 
+Zur Charakterisierung des Kleinsignalverhaltens wurde eine Eingangsamplitude von \qty{100}{\milli\volt} bei einer Startfrequenz von \qty{100}{\kilo\hertz} gewählt. Die Frequenz wurde sukzessiv erhöht, bis die Ausgangsamplitude am Oszilloskop auf den Wert $\frac{U_{in}}{\sqrt{2}}$ abgefallen war. Dies entspricht der klassischen Grenzfrequenz bei einer Dämpfung von \qty{-3}{\decibel}.
+Für die Großsignalmessung wurde das Verfahren mit einer Eingangsamplitude von \qty{2}{\volt} und einer Startfrequenz von \qty{50}{\kilo\hertz} wiederholt, bis ebenfalls die \qty{-3}{\decibel}-Grenze erreicht war.
+
+Um die Bandbreite bei einer Verstärkung von $A = 10$ zu ermitteln, wurde die in Abbildung \ref{fig:8a} dargestellte nicht-invertierende Verstärkerschaltung realisiert.
+\begin{figure}[H]
+        \centering
+        \begin{circuitikz}[european] 
+        \node [op amp, noinv input up] (opamp) at (0,0) {};
         
-
-        \subsection*{3}
-        Für die Messung der Input-Offset Spannung, welche sich im \qty{}{\milli\volt} bis \qty{}{\micro\volt} Bereich liegt, wurde wieder eine 
-        nicht invertierende Verstärkerschaltung \ref{fig:8} aufgebaut. Diese soll eine sehr große Verstäkung aufweisen um die Input-Offset-Spannung sichtbar zu
-        machen. Der Widerstand $R_1$ wurde in mit \qty{10}{\ohm} dimensioniert. Der Widerstand $R_2$ wurde mit \qty{10}{\kilo\ohm} angenommen.
-        Dies ergibt eine Verstärkung von $A=1000$.
-        Der nicht invertierende Eingang wird auf Masse gesetzt und man misst mit dem Oszilloskop das Ausgangssignal.
-         \begin{figure}[H]
-                \centering
-                  \begin{circuitikz}[european] % Nutzt das Standard-Dreieck für den OPV
-                % OPV platzieren mit invertiertem Eingang unten (noinv input up)
-                \node [op amp, noinv input up] (opamp) at (0,0) {};
+        % Nicht-invertierender Eingang (+) oben
+        \draw (opamp.+) -- (-1.5, 0.5) 
+              to[short, -o] (-2, 0.5) node[left] {$U_{in}$};
                 
-                % Nicht-invertienter Eingang (+) ist jetzt OBEN
-                % Verbindung zur Eingangsspannung
-                \draw (opamp.+) -- (-1.5, 0.5) 
-                        to[short, -o] (-2, 0.5) node[ground, rotate =270] {};
-                        
-                % Invertierender Eingang (-) ist jetzt UNTEN
-                % Pfad nach unten führen zum Rückkoppelnetzwerk
-                \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
-                        to[R, l=$R_1$] (-1.2, -3.5) 
-                        to[ground] (-1.2, -3.5);
-                        
-                % Rückkopplung von unten zum Ausgang
-                 \draw (-1.2, -2) -- (2.5, -2)
-                        -- (2.5, 0) -- (opamp.out);
+        % Invertierender Eingang (-) unten mit Rückkopplung
+        \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
+                to[R, l=$R_1$] (-1.2, -3.5) 
+                to[ground] (-1.2, -3.5);
+                
+        \draw (-1.2, -2) -- (2.5, -2)
+              -- (2.5, 0) -- (opamp.out);
 
-                \draw (-1.2,-3.5) node[ground]{};
-                        
-                % Ausgangsspannung zeichnen
-                \draw (opamp.out) -- (3, 0) 
-                        to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+        \draw (-1.2,-3.5) node[ground]{};
+                
+        % Ausgangsspannung
+        \draw (opamp.out) -- (3, 0) 
+              to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+        \end{circuitikz}
+        \caption{Nicht-invertierende Verstärkerschaltung ($A = 10$)}
+        \label{fig:8a}
+\end{figure} 
+Die Dimensionierung der Widerstände erfolgte über die fundamentale Gleichung \ref{eq:8}. Der Fußpunktwiderstand $R_1$ wurde mit \qty{10}{\kilo\ohm} vorgegeben:
+\begin{equation}
+        A = 1 + \frac{R_2}{R_1} = 10 \quad \rightarrow \quad R_2 = (A-1) \cdot R_1 = 9 \cdot \qty{10}{\kilo\ohm} = \qty{90}{\kilo\ohm} 
+        \label{eq:8}
+\end{equation}
+Bei der anschließenden Großsignalmessung wurde eine Amplitude von \qty{1}{\volt} eingestellt und die Frequenz schrittweise angehoben, bis das sinusförmige Ausgangssignal merklich in eine Dreiecksform überging. Diese Signalverzerrung resultiert aus der begrenzten Flankensteilheit (Slew Rate) des Operationsverstärkers.
 
-                \end{circuitikz}
-                \caption{Messschaltung Input-Offset}
-                \label{fig:8}
-        \end{figure} 
-        Zum Schluss sollten die Input-Offset-Spannung, Input-Bias-Strom sowie die Bandbreite des OPV mit Verstärkung $1$ und Vestärkung $10$ simuliert werden.
-        Das verwendete Spice-Modell ist der LM2904. Dieser OPV weißt Ähnlichkeit zu dem verwendeten LM358 auf besitzt jedoch 
-        einige Unterschiede diese wirken sich auf die Simulationsergebnisse, bezüglich der Messung der Bandbreite. 
-
+\subsection*{3}
+Da sich die Eingangs-Offset-Spannung typischerweise im Bereich von \qty{}{\milli\volt} bis \qty{}{\micro\volt} bewegt, wurde zu deren messtechnischen Erfassung erneut eine nicht-invertierende Verstärkerschaltung herangezogen (siehe Abbildung \ref{fig:8b}). Um die geringe Offset-Spannung in gut messbare Regionen zu transformieren, wurde eine hohe Verstärkung gewählt. Mit den Werten $R_1 = \qty{10}{\ohm}$ und $R_2 = \qty{10}{\kilo\ohm}$ ergab sich eine Spannungsverstärkung von $A = 1000$. Der nicht-invertierende Eingang wurde hierbei direkt auf das Massepotenzial gelegt, woraufhin die verbleibende Gleichspannung am Ausgang mit dem Oszilloskop gemessen wurde.
+\begin{figure}[H]
+        \centering
+        \begin{circuitikz}[european]
+        \node [op amp, noinv input up] (opamp) at (0,0) {};
         
+        % Nicht-invertierender Eingang (+) auf Masse gelegt
+        \draw (opamp.+) -- (-1.5, 0.5) 
+              to[short, -o] (-2, 0.5) node[ground, rotate=270] {};
+                
+        % Invertierender Pfad
+        \draw (opamp.-) -- (-1.2, -0.5) to[R, l=$R_2$] (-1.2, -2)
+                to[R, l=$R_1$] (-1.2, -3.5) 
+                to[ground] (-1.2, -3.5);
+                
+        \draw (-1.2, -2) -- (2.5, -2)
+              -- (2.5, 0) -- (opamp.out);
 
+        \draw (-1.2,-3.5) node[ground]{};
+                
+        % Ausgangsspannung
+        \draw (opamp.out) -- (3, 0) 
+              to[short, -o] (3.5, 0) node[right] {$U_{out}$};
+        \end{circuitikz}
+        \caption{Messschaltung zur Bestimmung der Eingangs-Offset-Spannung}
+        \label{fig:8b}
+\end{figure} 
 
-
-
+Ergänzend wurden die Eingangs-Offset-Spannung, der Eingangs-Bias-Strom sowie die beiden Frequenzgänge ($A=1$ und $A=10$) in LTspice simuliert. Als Simulationsmodell diente der Typ LM2904. Dieser weist eine hohe strukturelle Ähnlichkeit zum real genutzten LM358 auf, besitzt jedoch feine Modellunterschiede, welche primär bei den Grenzfrequenzen zu Abweichungen führen.
 
 \section*{Diskussion}
-        \subsection*{1}
-        Die Schaltung besteht aus zwei Teilen, der Mitkopplungspfad der Schaltung
-        ist ein Schmitt-Trigger. Dieser ermöglicht es das die Schaltung, ab einer bestimmten Spannungsschwelle schaltet.
-        Diese Spannungsschwellen berechnen sich mit folgenden Formeln, \cite{PR_digital}:
-        \begin{equation}
-                U_{ein,schwelle} = \frac{R_3}{R_2+R_3} \cdot U_{aus,min} = 
-                \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot \qty{-5}{\volt} \approx 
-                \qty{-0.45}{\volt} 
-                \label{eq:6}
-        \end{equation}
-        \begin{equation}
-                U_{aus, schwelle} = \frac{R_3}{R_2+R_3} \cdot U_{aus,max} = 
-                \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot \qty{5}{\volt}\approx 
-                \qty{0.45}{\volt} 
-                \label{eq:7}
-        \end{equation}
-        Der Gegenkopplungspfad sorgt durch den Kondensator für das Takten des Umschaltvorgangs. 
-        Wenn der Ausgang auf \qty{5}{\volt} springt fließt Strom durch den Widerstand $R_1$  in den Kondensator.
-        Sobald die Kondensatorspannung die Schwellspannung von \qty{0.45}{\volt} übersteigt, schaltet der OPV-Ausgang auf \qty{-5}{\volt}. 
-        Der Kondensator beginnt sich zu entladen bis er die SChwelle von \qty{-0.45}{\volt} erreicht. 
-        Der Zyklus beginnt dann von vorne. 
-        Mit dem Widerstand $R_1$ und dem Kondensator $C_1$ kann man die Periodendauer steuern.
-        Im Labor liefert die Schaltung folgendes Ausgangssignal \ref{fig:10}.
-        \begin{figure}[H]
-                \centering
-                \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/Oszilloskop.jpeg}
-                \caption{Ausgangssignal astabiler Multivibrator}
-                \label{fig:10}
-        \end{figure}
-        In Cyan ist die Spannung über den Kondensator dargestellt und in Gelb die Ausgangsspannung der Schaltung.
-        Der Spannungsverlauf der Kondensatorspannung ähnelt einem Dreiecksignal. Der Grund dafür ist das zu Beginn der 
-        Ladung eines Kondensators exponentielle Ansteigen der Spannung. Die Schwellspannung liegt unterhalb jenen Bereichs bei dem 
-        die Ladungskurve des Kondensators abflacht. 
-        Der Spannungsverlauf der Ausgangsspannung ist eine Rechteckspannung.
-        Das Ausgangssignal des OPV ändert sich bei einer gewissen Schwellspannung. 
-        In der Abbildung erkennt man das die Amplitude der Kondensatorspannung ungefähr \qty{0.5}{\volt} beträgt.
-        Dies bestätigt die erwarteten Schwellspannungen \ref{eq:6} \ref{eq:7}.
-        Das Ausgangssignal besitzt eine Amplitude von ungefähr \qty{4}{\volt}.
-        Dies liegt daran, dass es sich beim LM358 um keinen Rail-to-Rail OPV handelt.
-        Die Frequenz des Ausgangssignals beträgt \qty{2.2}{\kilo\hertz}. 
-        Anschließend wurde die Schaltung in LTspice simuliert. 
-        Dafür wurde die Anfangsbedinung für die Kondensatorspannung auf \qty{5}{\volt} gesetzt.
-        Daraus ergab sich folgender Graph, siehe \ref{fig:9}.
+\subsection*{1}
+Die astabile Multivibratorschaltung gliedert sich funktional in zwei Pfade. Der Mitkopplungspfad arbeitet als invertierender Schmitt-Trigger, welcher definierte Schwellspannungen für den Umschaltvorgang festlegt. Diese Schwellen lassen sich mathematisch wie folgt beschreiben \cite{PR_digital}:
+\begin{equation}
+        U_{\text{ein, schwelle}} = \frac{R_3}{R_2+R_3} \cdot U_{\text{aus, min}} = \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot (-\qty{5}{\volt}) \approx -\qty{0,45}{\volt} 
+        \label{eq:6}
+\end{equation}
+\begin{equation}
+        U_{\text{aus, schwelle}} = \frac{R_3}{R_2+R_3} \cdot U_{\text{aus, max}} = \frac{\qty{10}{\kilo\ohm}}{\qty{110}{\kilo\ohm}} \cdot \qty{5}{\volt} \approx \qty{0,45}{\volt} 
+        \label{eq:7}
+\end{equation}
+Der Gegenkopplungspfad, welcher das zeitbestimmende $R_1C_1$-Glied enthält, steuert die Periodendauer. Springt die Ausgangsspannung auf den maximalen Wert ($+\qty{5}{\volt}$), lädt sich der Kondensator $C_1$ über $R_1$ auf. Sobald die Kondensatorspannung die obere Schaltschwelle von \qty{0,45}{\volt} überschreitet, kippt der Ausgang des OPVs auf den minimalen Wert ($-\qty{5}{\volt}$). Infolgedessen entlädt sich der Kondensator, bis er die untere Schwelle von $-\qty{0,45}{\volt}$ erreicht, woraufhin der Zyklus erneut einsetzt.
+
+Das im Labor aufgezeichnete Oszilloskop-Diagramm ist in Abbildung \ref{fig:10} dargestellt.
+\begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/Oszilloskop.jpeg}
+        \caption{Messtechnisch erfasste Signalverläufe des astabilen Multivibrators}
+        \label{fig:10}
+\end{figure}
+Der cyanfarbene Kanal repräsentiert die Kondensatorspannung, während der gelbe Kanal die Ausgangsspannung zeigt. Die Kondensatorspannung besitzt einen annähernd dreieckförmigen Verlauf. Dies liegt daran, dass sich die Schwellspannungen im annähernd linearen, steilen Anfangsbereich der exponentiellen Lade- und Entladekurve befinden. Die Ausgangsspannung stellt eine saubere Rechteckspannung dar. 
+
+Die Oszilloskop-Messung validiert die Schwellenspannungen, da die Amplitude der Kondensatorspannung exakt Spitzenwerte von ca. $\pm\qty{0,5}{\volt}$ aufweist, was gut mit den Gleichungen \ref{eq:6} und \ref{eq:7} übereinstimmt. Die Ausgangsamplitude erreicht jedoch nur rund $\pm\qty{4}{\volt}$. Dies begründet sich mit der fehlenden Rail-to-Rail-Spezifikation des LM358, dessen Ausgangsstufe systembedingt nicht die vollen Versorgungsspannungsschienen erreichen kann. Die gemessene Ausgangsfrequenz beträgt \qty{2,2}{\kilo\hertz}.
+
+Die korrespondierende LTspice-Simulation (unter der Anfangsbedingung $U_{C1}(0) = \qty{5}{\volt}$) lieferte die in Abbildung \ref{fig:9} dargestellten Kurvenverläufe.
 \begin{figure}[H]
         \centering
         \begin{tikzpicture}
         \begin{axis}[
             width=0.46\textwidth,
-            xlabel={$Zeit$ [t]},
+            xlabel={$Zeit$ [s]},
             ylabel={$Spannung$ [V]},
             grid=both,
             minor tick num=1,
             minor y tick num=4,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
         ]
         \addplot[
-            color=green,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=green,          
+            thick,              
             ] table [x expr=\thisrowno{0}, y expr=\thisrowno{1}] {Simulationen 3.Labor/astabilerMultivibrator.txt};
-        \addlegendentry{$U_{Out}$}
+        \addlegendentry{$U_{\text{Out}}$}
         \addplot[
-            color=red,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=red,          
+            thick,              
             ] table [x expr=\thisrowno{0}, y expr=\thisrowno{2}] {Simulationen 3.Labor/astabilerMultivibrator.txt};
             
         \addlegendentry{$U_C$}
         \end{axis}
         \end{tikzpicture}
-        \caption{Ausgangssignale (Messwerte) links, Ausgangssignale (Simulation) rechts}
+        \caption{Simulierter zeitlicher Spannungsverlauf von $U_{\text{Out}}$ und $U_C$}
         \label{fig:9}
 \end{figure}
-        Der Spannungsverlauf des Kondensators und der Ausgangsspannung stimmen mit dem gemesssen Werten überein. 
-        Die Amplitude der Ausgangsspannung beträgt ungefähr \qty{4}{\volt} und die Amplitude der Kondensatorspannung beträgt ungefähr \qty{0.5}{\volt}.
-        Die Frequenz des Ausgangssignal beträgt \qty{2.2}{\kilo\hertz}.
+Die Simulationsergebnisse korrelieren präzise mit den realen Laborwerten. Die Amplituden ($U_{\text{Out}} \approx \pm\qty{4}{\volt}$, $U_C \approx \pm\qty{0,5}{\volt}$) sowie die Signalfrequenz von \qty{2,2}{\kilo\hertz} werden im Modell fehlerfrei repliziert.
 
-        \subsection*{2}
-        Die Bandbreite ist jener Frequenzbereich bei dem das Eingangssignal nur bis zu $\frac{U_{in}}{\sqrt{2}}$ gedämpft wird. 
-        Bei der Messung der Bandbreite  des OPV erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:1}.
-        \begin{table}[H]
-                \centering
-                \begin{tabular}{c|c|c|c}
-                        Signaltyp       &  Verstäkung A &   Amplitude                   &       Grenzfrequenz \\
-                        \hline
-                        Kleinsignal     &  1            &\qty{100}{\milli\volt}         & \qty{1.5}{\mega\hertz}\\
-                        \hline
-                        Großsignal      &  1            &\qty{1000}{\milli\volt}        & \qty{180}{\kilo\hertz}\\
-                        \hline
-                        Kleinsignal     &  10           &\qty{100}{\milli\volt}        & \qty{110}{\mega\hertz}\\
-                        \hline
-                        Großsignal      &  10           &    -                         &             -           \\
-                        
-                \end{tabular}
-                \caption{Messung der Bandbreite}
-                \label{tab:1}
-        \end{table}
-        Der Unterschied der Bandbreite des Kleinsignals mit Verstärkung $1$ und des Kleinsignals mit Verstärkung $10$ ist deutlich zu erkennen. Diese Unterschied entspricht auch ungefähr dem 
-        dem gleichen Verstärkungsbandbreiteprodukt, siehe Berechnung \ref{eq:10}. 
-        \begin{equation}
-                \qty{1.5}{\mega\hertz} \approx \qty{110}{\kilo\hertz} \cdot 10 = \qty{110}{\mega\hertz}
-                \label{eq:10}
-        \end{equation} 
-        Bei der Messung des Großsignals bei einer Verstärkung $10$ ging der OPV in den Slew-Bereich. Dabei wurde die Slew-Rate, aus der Steigung der Spannung und der Zeitbasis berechnet.
-        Die Berechnung \ref{eq:9} der Slew-Rate ergibt \qty{0.474}{\volt/\micro\second}. Die erwartete Slew-Rate des LM358 aus dem Datenblatt \cite{datasheet} lautet \qty{0.3}{\volt/\micro\second}.
-        \begin{equation}
-                dy = \qty{4.6}{\volt}, \, dx = \qty{9.7}{\micro\second}  \rightarrow SR = \frac{dy}{dx}= \frac{\qty{4.6}{\volt}}{\qty{9.7}{\micro\second}} = \qty{0.474}{\volt/\micro\second}.
-                \label{eq:9}
-        \end{equation}
-        Die LTspice Simulation ergab folgende Bandbreiten, siehe Tabelle \ref{tab:3}.
-         \begin{table}[H]
-                \centering
-                \begin{tabular}{c|c|c|c}
-                        Signaltyp       & Verstäkung A          &  Amplitude            &       Grenzfrequenz \\
-                        \hline
-                        Kleinsignal     & 1                     & \qty{100}{\milli\volt}& \qty{950}{\kilo\hertz}\\
-                        \hline
-                        Großsignal      & 1                     &\qty{1000}{\milli\volt}& \qty{120}{\kilo\hertz}\\
-                        \hline
-                        Kleinsignal     & 10                    & \qty{100}{\milli\volt}& \qty{950}{\kilo\hertz}\\
-                        \hline
-                        Großsignal      & 10                    & -                     & -                     \\
-                        
-                \end{tabular}
-                \caption{Simulation der Bandbreite}
-                \label{tab:3}
-        \end{table}
-        Bei der Simulation des Großsignal, bei Vestärkung $1$ geht der OPV, ab einer Frequenz von ungefähr \qty{70}{\kilo\hertz} in eine Dreieckssignalform über, da er in den durch die Slew-Rate begrenzten 
-        Bereich geht. Dies konnte man bei den Messungen nicht feststellen. Grund dafür könnten andere Parameter des verwendeten Simulationsmodell sein.
-        Die Slew-Rate aus der Simulation beträgt \qty{0.36}{\volt/\milli\second} und  berechnet sich analog wie jene aus den gemessenen Werten, siehe Berechnung \ref{eq:9}.
-        Die Amplitude nimmt bei \qty{180}{\kilo\hertz} um den Faktor $\frac{1}{\sqrt{2}}$ ab.
-        Das Ausgangssignal des Großsignals, bei Verstäkung $10$ ist aufgrund der Slew-Rate begrenzt. Dies deckt sich auch mit den gemessenen Werten des Großsignals 
-        bei einer Verstäkung $10$.
+\subsection*{2}
+Die Bandbreite definiert das Frequenzband, in dem das Signal eine maximale Abschwächung von \qty{-3}{\decibel} (entspricht dem Faktor $\frac{1}{\sqrt{2}}$) erfährt. Die im Labor ermittelten Messwerte sind in Tabelle \ref{tab:1} zusammengefasst.
+\begin{table}[H]
+        \centering
+        \begin{tabular}{l|c|c|c}
+                Signaltyp       & Verstärkung $A$ &  Eingangsamplitude & Grenzfrequenz ($-3$\,dB) \\
+                \hline
+                Kleinsignal     & 1               & \qty{100}{\milli\volt}  & \qty{1,5}{\mega\hertz}\\
+                \hline
+                Großsignal      & 1               & \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                \hline
+                Kleinsignal     & 10              & \qty{100}{\milli\volt}  & \qty{150}{\kilo\hertz}\\
+                \hline
+                Großsignal      & 10              & -                       & -                       \\
+        \end{tabular}
+        \caption{Labor-Messwerte der Bandbreitenbestimmung}
+        \label{tab:1}
+\end{table}
+Der reziproke Zusammenhang zwischen der Bandbreite bei Verstärkung $A=1$ und $A=10$ tritt deutlich hervor. Das resultierende Gain-Bandwidth-Product (Verstärkungsbandbreitenprodukt) erweist sich gemessenermaßen als näherungsweise konstant, wie in Gleichung \ref{eq:10} veranschaulicht:
+\begin{equation}
+        \qty{1,5}{\mega\hertz} \approx 10 \cdot \qty{150}{\kilo\hertz} = \qty{1,5}{\mega\hertz}
+        \label{eq:10}
+\end{equation} 
+Bei der Großsignalanalyse mit einer Verstärkung von $A = 10$ geriet der Baustein vollständig in die Begrenzung durch seine Slew Rate. Die reale Slew Rate wurde anhand des Spannungshubs über der gemessenen Zeitbasis berechnet. Gemäß Gleichung \ref{eq:9} ergibt sich ein Wert von \qty{0,474}{\volt/\micro\second}, was geringfügig über der typischen Datenblattspezifikation von \qty{0,3}{\volt/\micro\second} liegt \cite{datasheet}.
+\begin{equation}
+        \Delta U = \qty{4,6}{\volt}, \, \Delta t = \qty{9,7}{\micro\second}  \quad \rightarrow \quad \text{SR} = \frac{\Delta U}{\Delta t} = \frac{\qty{4,6}{\volt}}{\qty{9,7}{\micro\second}} = \qty{0,474}{\volt/\micro\second}
+        \label{eq:9}
+\end{equation}
 
-        \subsection*{3}
-        Die Input-Offset-Spannung ist die reale Differenzspannung zwischen den Eingangspins des OPV.
-        Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}. Dies stimmt auch mit dem erwarteten Wert von \qty{3}{\milli\volt} aus dem Datenblatt \cite{datasheet}.
-        Die LTspice Simulation \ref{fig:10} ergab einen Input-Offset-Spannung von \qty{2.6}{\milli\volt} und eine Input-Bias-Current von 
-        \qty{-20}{\nano\ampere}.
-        \begin{figure}[H]
-                \centering
-                \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/LTspice1.jpg}
-                \caption{Simulationsschaltung für Input-Offset-Spannung und Input-Bias-Strom}
-                \label{fig:10}
-        \end{figure}
+Die per LTspice durchgeführte Frequenzganganalyse lieferte die in Tabelle \ref{tab:3} dokumentierten Werte.
+\begin{table}[H]
+        \centering
+        \begin{tabular}{l|c|c|c}
+                Signaltyp       & Verstärkung $A$          &  Eingangsamplitude    & Grenzfrequenz \\
+                \hline
+                Kleinsignal     & 1                        & \qty{100}{\milli\volt} & \qty{950}{\kilo\hertz}\\
+                \hline
+                Großsignal      & 1                        & \qty{1000}{\milli\volt}& \qty{120}{\kilo\hertz}\\
+                \hline
+                Kleinsignal     & 10                       & \qty{100}{\milli\volt} & \qty{95}{\kilo\hertz}\\
+                \hline
+                Großsignal      & 10                       & -                      & -                     \\
+        \end{tabular}
+        \caption{Simulationsbasierte Bandbreitenergebnisse (LTspice)}
+        \label{tab:3}
+\end{table}
+In der Großsignalsimulation bei einer Verstärkung von $A = 1$ transformiert das Ausgangssignal ab einer Frequenz von circa \qty{70}{\kilo\hertz} in eine ausgeprägte Dreiecksform, da die maximale Flankensteilheit des Modells limitiert. Die berechnete Slew Rate der Simulation beträgt \qty{0,36}{\volt/\micro\second} und nähert sich damit enger dem theoretischen Datenblattwert an. Die Amplitudendämpfung um den Faktor $\frac{1}{\sqrt{2}}$ tritt hier bei \qty{120}{\kilo\hertz} ein. Bei einer simulierten Verstärkung von $A = 10$ bricht das Großsignal aus analogen Gründen verfrüht ein, was die messtechnischen Laborbeobachtungen qualitativ untermauert.
 
-        
+\subsection*{3}
+Die Eingangs-Offset-Spannung beschreibt die intern bedingte Differenzspannung zwischen den beiden Eingangsterminals eines realen Operationsverstärkers. Die Laboruntersuchung ergab einen Messwert von \qty{3,6}{\milli\volt}, was in einer sehr engen Toleranz zum typischen Datenblattwert von \qty{3}{\milli\volt} steht \cite{datasheet}. 
 
-
-
-
-
-
-
-
-
+Die softwareseitige Überprüfung mittels LTspice (siehe Simulationsaufbau in Abbildung \ref{fig:11}) ergab eine Eingangs-Offset-Spannung von \qty{2,6}{\milli\volt} sowie einen Basis-Eingangsstrom (Input Bias Current) von \qty{-20}{\nano\ampere}.
+\begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/LTspice1.jpg}
+        \caption{LTspice-Simulationsschaltung zur Ermittlung von Offset-Spannung und Bias-Strömen}
+        \label{fig:11}
+\end{figure}

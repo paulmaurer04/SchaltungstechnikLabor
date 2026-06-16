@@ -3,12 +3,12 @@
 \section{Laborversuch}
 % Paul
 \section*{Kurzzusammenfassung}
-In diesem Laborversuch wurde zunächst eine Einführung in das richtige Messen im Labor gegeben. Anschließend wurden die Eigenschaften des verwendeten Transistors anhand von Kennlinien beschrieben. Abschließend wurde eine Emitterverstärkerschaltung untersucht.
+In diesem Laborversuch wurde zunächst eine Einführung in das ordnungsgemäße Messen im Labor gegeben. Anschließend wurden die Eigenschaften des verwendeten Transistors anhand von Kennlinien beschrieben. Abschließend wurde eine Emitterverstärkerschaltung untersucht.
 
 \section*{Durchführung}
 \subsection*{1}
-Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen aufgebaut, siehe Abbildung \ref{Reihenschaltung}. Die Widerstandswerte werden mit einem Multimeter gemessen. Anschließend wird eine \SI{12}{\volt} Spannungsversorgung angeschlossen und der Spannungsabfall $U_{R_2}$ mithilfe eines Oszilloskops gemessen.
-\begin{figure}[h]
+Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen aufgebaut (siehe Abbildung \ref{Reihenschaltung}). Die exakten Widerstandswerte werden vorab mit einem Multimeter gemessen. Nach dem Anschluss einer \SI{12}{\volt} Spannungsversorgung wird der Spannungsabfall $U_{R_2}$ mithilfe eines Oszilloskops ermittelt.
+\begin{figure}[H]
     \centering
     \begin{circuitikz}[european]
         \draw (0,0)
@@ -17,23 +17,18 @@ Zu Beginn wird eine Reihenschaltung aus zwei \SI{3,3}{\mega\ohm} Widerständen a
         to[R, l=$\SI{3.20}{\mega\ohm}$, a = $R_2$] (6,3)             % Zweiter Widerstand oben (in Reihe)
         to[short] (6,0)                  % Leitung nach unten
         -- (0,0);                        % Leitung zurück zum Start
-
     \end{circuitikz}
-    \caption{ideale Reihenschaltung}
+    \caption{Ideale Reihenschaltung}
     \label{Reihenschaltung}
 \end{figure}
-Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, obwohl ein Spannungsabfall von \SI{6}{\volt} erwartet worden war.
-
+Dabei wurde ein Wert von \SI{2,23}{\volt} gemessen, obwohl theoretisch ein Spannungsabfall von \SI{6}{\volt} zu erwarten gewesen wäre.
 
 \section*{2}
- Anschließend wurde die erste Transistorschaltung aufgebaut. Dabei war das Ziel die experimentelle Darstellung der Übertragungskennlinien ($U_{BE}$, $I_C$) und ($I_B$, $I_C$) des Transistors 2N4401. Als Vorwiderstand wurde ein \SI{22}{\kilo\ohm} Widerstand gewählt und die Spannung $U_{CE}$ wurde auf \SI{5}{\volt} gesetzt. Dabei sollte der Strom $I_C$ auf \SI{60}{\milli\ampere} limitiert werden.
- Die Spannungen wurden mit dem Oszilloskop gemessen. Die Ströme wurden mit dem Multimeter gemessen.
-
-
-
+Anschließend wurde die erste Transistorschaltung realisiert. Das Ziel hierbei war die experimentelle Aufnahme der Übertragungskennlinien ($U_{BE}$, $I_C$) und ($I_B$, $I_C$) des Transistors 2N4401. Als Vorwiderstand wurde ein \SI{22}{\kilo\ohm} Widerstand gewählt und die Spannung $U_{CE}$ auf \SI{5}{\volt} eingestellt. Der Kollektorstrom $I_C$ sollte dabei auf \SI{60}{\milli\ampere} limitiert werden.
+Die Spannungen wurden mit dem Oszilloskop aufgezeichnet, während die Ströme über das Multimeter gemessen wurden.
 
 \section*{3}
-Im letzten Teil des ersten Laborversuchs wurde eine Emitterverstärkerschaltung mit Stromgegenkopplung sowie Emitter- und Koppelkondensator simuliert (siehe Abbildung \ref{fig:5}). Anschließend wurde diese im Labor aufgebaut und die Spannungsverstärkung gemessen.
+Im letzten Teil des ersten Laborversuchs wurde eine Emitterverstärkerschaltung mit Stromgegenkopplung sowie Emitter- und Koppelkondensator simuliert (siehe Abbildung \ref{fig:5}). Nach der Simulation wurde die Schaltung real im Labor aufgebaut, um die reale Spannungsverstärkung zu ermitteln.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{Fotos 1.Labor/Emitterverstärkerschaltung.jpg}
@@ -41,16 +36,12 @@ Im letzten Teil des ersten Laborversuchs wurde eine Emitterverstärkerschaltung 
     \label{fig:5}
 \end{figure}
 
+Die Versorgungsspannung der Schaltung beträgt \qty{12}{\volt}. Als Eingangssignal diente ein Sinussignal mit einer Amplitude von \SI{20}{\milli\volt} und einer Frequenz von \SI{1}{\kilo\hertz}. Der Arbeitspunkt des Ausgangssignals sollte bei \qty{6}{\volt} liegen.
+Das Eingangssignal wurde im Labor mittels eines Funktionsgenerators erzeugt, und der gewünschte Arbeitspunkt wurde über ein Potentiometer einjustiert. Das resultierende Ausgangssignal wurde abschließend mit dem Oszilloskop gemessen.
 
-Die Versorgungsspannung der Schaltung beträgt \qty{12}{\volt}. Als Eingangssignal wurde ein Sinussignal mit einer Amplitude von \SI{20}{\milli\volt} und einer Frequenz von \SI{1}{\kilo\hertz} gewählt. Der Arbeitspunkt des Ausgangssignals soll bei \qty{6}{\volt} liegen.
-Nach der Simulation wurde die Schaltung im Labor aufgebaut. Das Eingangssignal wurde hierbei mit einem Funktionsgenerator erzeugt und der Arbeitspunkt mittels eines Potentiometers eingestellt. Anschließend wurde das Ausgangssignal mit dem Oszilloskop gemessen. 
 \section*{Diskussion}
 \subsection*{1}
- Die Abweichung bei der Messung des Spannungsabfalls lässt sich dadurch erklären, 
- dass der Tastkopf des Oszilloskops einen Innenwiderstand von ungefähr \SI{1}{\mega\ohm} besitzt.
-  Das bedeutet, dass die Schaltung effektiv aus einer Reihenschaltung eines \SI{3,3}{\mega\ohm} Widerstands
-   und einer Parallelschaltung aus einem \SI{3,3}{\mega\ohm} sowie dem Innenwiderstand des Oszilloskops besteht, 
-   siehe Abbildung \ref{Reihenschaltung2}.
+Die erhebliche Abweichung bei der Messung des Spannungsabfalls lässt sich durch den endlichen Innenwiderstand des Oszilloskop-Tastkopfes erklären, welcher im Bereich von \SI{1}{\mega\ohm} liegt. Dadurch ergibt sich für die reale Messung eine Schaltung, die aus der Reihenschaltung des Widerstands $R_1$ und einer Parallelschaltung aus $R_2$ und dem Innenwiderstand des Oszilloskops besteht (siehe Abbildung \ref{Reihenschaltung2}).
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[european]
@@ -75,26 +66,25 @@ Nach der Simulation wurde die Schaltung im Labor aufgebaut. Das Eingangssignal w
         to[short] (8,0) 
         -- (0,0);
     \end{circuitikz}
-    \caption{reale Reihenschaltung}
+    \caption{Reale Schaltungsstruktur unter Berücksichtigung des Messgerätes}
     \label{Reihenschaltung2}
 \end{figure}
-Den genauen Widerstandswert des Innenwiderstands kann man durch die Berechnungen \ref{eq:1} bis \ref{eq:3} mithilfe der Spannungsteilerregel ermitteln. 
+Der exakte Wert dieses Innenwiderstands ($R_3$) lässt sich durch Umstellen der Spannungsteilerregel nach den Gleichungen \ref{eq:1} bis \ref{eq:3} rechnerisch ermitteln:
 \begin{equation}
-    U_{R_2,R_3}= \frac{R_2||R_3}{R_1+R_2||R_3}\cdot U_1 = \frac{R_2\cdot R_3}{R_1\cdot R_2+R_1\cdot R_3+R_2\cdot R_3}\cdot U_1
+    U_{R_2,R_3}= \frac{R_2 \parallel R_3}{R_1 + R_2 \parallel R_3} \cdot U_1 = \frac{R_2 \cdot R_3}{R_1 \cdot R_2 + R_1 \cdot R_3 + R_2 \cdot R_3} \cdot U_1
     \label{eq:1}
 \end{equation}
 \begin{equation}
-    \frac{U_{R_2,R_3}}{U_1}\cdot(R_1\cdot R_2+R_1\cdot R_3+R_2\cdot R_3)-R_2\cdot R_3 =0
+    \frac{U_{R_2,R_3}}{U_1} \cdot (R_1 \cdot R_2 + R_1 \cdot R_3 + R_2 \cdot R_3) - R_2 \cdot R_3 = 0
     \label{eq:2}
 \end{equation}
 \begin{equation}
-R_3 = \frac{\frac{U_{R_2,R_3}}{U_1}\cdot R_1\cdot R_2}{R_2- \frac{U_{R_2,R_3}}{U_1}\cdot (R_1+R_2)}=\SI{957947,891}{\ohm}
+    R_3 = \frac{\frac{U_{R_2,R_3}}{U_1} \cdot R_1 \cdot R_2}{R_2 - \frac{U_{R_2,R_3}}{U_1} \cdot (R_1 + R_2)} = \SI{957947,891}{\ohm}
     \label{eq:3}
 \end{equation}
 
-
 \subsection*{2}
-Die gemessenen Werte für die Übetragungskennlinie und die Stromverstärkungskennlinie wurden in folgender Abbildung \ref{fig:1} dargestellt.
+Die messtechnisch erfassten Werte für die Übertragungs- und die Stromverstärkungskennlinie sind in Abbildung \ref{fig:1} grafisch dargestellt.
 \begin{figure}[H]
 \centering
         \begin{tikzpicture}
@@ -111,26 +101,23 @@ Die gemessenen Werte für die Übetragungskennlinie und die Stromverstärkungske
             mark=*,             % Markiert die Datenpunkte mit einem Punkt
         ]
         coordinates {
-            (0.488,	0)
-            (0.552,	0.1)
-            (0.568	,0.2)
-            (0.592	,0.3)
-            (0.6	,0.5)
-            (0.608	,0.6)
-            (0.616	,0.8)
-            (0.624	,1.1)
-            (0.632	,1.5)
-            (0.64	,2.2)
-            (0.656	,3.8)
-            (0.664	,5.6)
-            (0.672	,16.7)
-            (0.68	,21.3)
-
-            
+            (0.488, 0)
+            (0.552, 0.1)
+            (0.568, 0.2)
+            (0.592, 0.3)
+            (0.6  , 0.5)
+            (0.608, 0.6)
+            (0.616, 0.8)
+            (0.624, 1.1)
+            (0.632, 1.5)
+            (0.64 , 2.2)
+            (0.656, 3.8)
+            (0.664, 5.6)
+            (0.672, 16.7)
+            (0.68 , 21.3)
         };
         \addlegendentry{Übertragungskennlinie}
         \end{axis}
-        
         \end{tikzpicture} 
         \begin{tikzpicture}
         \begin{axis}[
@@ -146,43 +133,41 @@ Die gemessenen Werte für die Übetragungskennlinie und die Stromverstärkungske
             mark=*,             % Markiert die Datenpunkte mit einem Punkt
         ]
         coordinates {
-            (0.01   ,   0.8)
-            (0.02	,  3.1)
-            (0.03	 , 6.6)
-            (0.04	 , 7.6)
-            (0.05	 , 9.4)
-            (0.06	 , 11.1)
-            (0.07	 , 13.9)
-            (0.08	,  15.8)
-            (0.09	,  17.6)
-            (0.1	,   18.6)
-            (0.11	,  21.5)
-            (0.12	,  24.5)
-            (0.13	,  25.7)
-            (0.14	,  27.6)
-            (0.15	,  29.6)
-            (0.16	,  33.6)
-            (0.17	,  35.7)
-            (0.18	,  37.1)
-            (0.19	,  39.1)
-            (0.2	,   41.2)
-            (0.21	,  45.3)
-            (0.22	,  46.5)
-            (0.23	,  48.6)
-            (0.24	,  50.8)
-
-
-            
+            (0.01 ,  0.8)
+            (0.02 ,  3.1)
+            (0.03 ,  6.6)
+            (0.04 ,  7.6)
+            (0.05 ,  9.4)
+            (0.06 , 11.1)
+            (0.07 , 13.9)
+            (0.08 , 15.8)
+            (0.09 , 17.6)
+            (0.1  , 18.6)
+            (0.11 , 21.5)
+            (0.12 , 24.5)
+            (0.13 , 25.7)
+            (0.14 , 27.6)
+            (0.15 , 29.6)
+            (0.16 , 33.6)
+            (0.17 , 35.7)
+            (0.18 , 37.1)
+            (0.19 , 39.1)
+            (0.2  , 41.2)
+            (0.21 , 45.3)
+            (0.22 , 46.5)
+            (0.23 , 48.6)
+            (0.24 , 50.8)
         };
         \addlegendentry{Stromverstärkungskennlinie}
         \end{axis}
         \end{tikzpicture} 
-    \caption{Übertragungskennlinien (Messwerte)}
+    \caption{Messtechnisch ermittelte Übertragungskennlinien}
     \label{fig:1}
 \end{figure}
 
-Anhand der Eingangskennlinie in Abbildung \ref{fig:1} erkennt man deutlich ein exponentielles Verhalten des Basisstroms im Verhältnis zur Basis-Emitter-Spannung. Bei der Stromverstärkungskennlinie (siehe Abbildung \ref{fig:1}) ist zu sehen, dass sich die Stromverstärkung linear verhält. Mit steigendem Basisstrom erhält man folglich auch einen steigenden Kollektorstrom.\\
-Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fig:2}. Dabei wird deutlich, dass die Simulationswerte gut mit den realen Messwerten übereinstimmen. Kleinere Abweichungen sind auf Fertigungstoleranzen sowie auf Temperatureinflüsse zurückzuführen.
+Anhand der Übertragungskennlinie in Abbildung \ref{fig:1} wird das charakteristische exponentielle Verhalten des Kollektorstroms im Verhältnis zur Basis-Emitter-Spannung deutlich. Die Stromverstärkungskennlinie (siehe Abbildung \ref{fig:1}) weist hingegen einen näherungsweise linearen Verlauf auf. Ein steigender Basisstrom resultiert folglich in einem proportional ansteigenden Kollektorstrom.
+
+Zum Vergleich wurde das Systemverhalten in LTspice simuliert (siehe Abbildung \ref{fig:2}). Die Simulationswerte zeigen eine gute Übereinstimmung mit den realen Messwerten. Geringfügige Abweichungen lassen sich auf Bauteiltoleranzen sowie thermische Einflüsse im Laborbetrieb zurückführen.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -192,15 +177,12 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
             ylabel={$I_C$ [mA]},
             grid=both,
             minor tick num=1,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
         ]
         \addplot[
-            color=red,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=red,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/sim1.txt};
             
         \addlegendentry{Übertragungskennlinie}
@@ -213,28 +195,24 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
             ylabel={$I_C$ [mA]},
             grid=both,
             minor tick num=1,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
         ]
         \addplot[
-            color=green,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=green,          
+            thick,              
             ] table [x expr=\thisrowno{1}*1000, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/sim2.txt};
             
         \addlegendentry{Stromverstärkungskennlinie}
         \end{axis}
     \end{tikzpicture}
-    \caption{Übertragungskennlinien (Simulation)}
+    \caption{Simulierte Übertragungskennlinien (LTspice)}
     \label{fig:2}
 \end{figure}
- Des Weiteren sollten anhand von Simulationsdaten auch die Eingangskennlinie sowie das Ausgangskennlinienfeld (siehe Abbildung \ref{fig:3}) erstellt werden.
- Bei der Eingangskennlinie erkennt man ein exponentielles Verhalten.
-  Am Ausgangskennlinienfeld erkennt man, in Abhängigkeit von der angelegten Basis-Emitter-Spannung,
-   wann der Transistor in die Sättigung geht.
- \begin{figure}[H]
+
+Des Weiteren wurden auf Basis der Simulationsdaten die Eingangskennlinie sowie das Ausgangskennlinienfeld generiert (siehe Abbildung \ref{fig:3}).
+Auch die Eingangskennlinie verdeutlicht das exponentielle Diodenverhalten der Basis-Emitter-Strecke. Im Ausgangskennlinienfeld lässt sich in Abhängigkeit von der angelegten Basis-Emitter-Spannung der Übergang des Transistors in den Sättigungsbereich exakt ablesen.
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
@@ -243,15 +221,12 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
             ylabel={$I_B$ [mA]},
             grid=both,
             minor tick num=1,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
         ]
         \addplot[
-            color=blue,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=blue,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Eingangskennlinie.txt};
         \addlegendentry{Eingangskennlinie}
         \end{axis}
@@ -263,52 +238,44 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
             ylabel={$I_C$ [mA]},
             grid=both,
             minor tick num=1,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
         ]
         \addplot[
-            color=green,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=green,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie1.txt};
             \addlegendentry{$U_{BE}$=\SI{660}{\milli\volt}}
         \addplot[
-            color=violet,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=violet,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie3.txt};
             \addlegendentry{$U_{BE}$=\SI{715}{\milli\volt}}
         \addplot[
-            color=red,         % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=red,         
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie5.txt};
             \addlegendentry{$U_{BE}$=\SI{770}{\milli\volt}}
         \addplot[
-            color=cyan,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=cyan,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie7.txt};
             \addlegendentry{$U_{BE}$=\SI{825}{\milli\volt}}
         \addplot[
-            color=orange,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=orange,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie9.txt};
             \addlegendentry{$U_{BE}$=\SI{880}{\milli\volt}}
         \end{axis}
     \end{tikzpicture}
-    
-    \caption{Eingangskennlinie \& Ausgangskennlinie (Simulation)}
+    \caption{Simulierte Eingangs- und Ausgangskennlinien}
     \label{fig:3}
 \end{figure}
- Außerdem wurde ein Vierquadranten-Kennlinienfeld aus den Simulationsdaten erstellt, siehe Abbildung \ref{fig:4}. Dabei befindet sich im 1. Quadranten das Ausgangskennlinienfeld (rot, violett, orange), reduziert auf die Basis-Emitter-Spannungen von \SI{660}{\milli\volt} bis \SI{715}{\milli\volt}. Im 2. Quadranten ist die Stromverstärkungskennlinie (grün) dargestellt und im 3. Quadranten befindet sich die Eingangskennlinie (blau).
+
+Zusätzlich wurde aus den extrahierten Simulationsdaten ein Vierquadranten-Kennlinienfeld erstellt (siehe Abbildung \ref{fig:4}). Hierbei ist im ersten Quadranten das Ausgangskennlinienfeld (orange, violett, rot) abgebildet, welches zur besseren Übersicht auf den Bereich $U_{BE} = \SI{660}{\milli\volt}$ bis \SI{715}{\milli\volt} begrenzt wurde. Der zweite Quadrant stellt die Stromverstärkungskennlinie (grün) dar, während im dritten Quadranten die exponentielle Eingangskennlinie (blau) aufgetragen ist.
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-    % Erste Achse: Rechts-Oben (1. Quadrant) & Links-Unten (3. Quadrant)
     \begin{axis}[
         width=0.9\textwidth,
         axis lines=middle,
@@ -317,7 +284,6 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
         grid=both,
         minor tick num=1,
         xticklabel={$\pgfmathparse{abs(\tick)}\pgfmathprintnumber{\pgfmathresult}$},
-        % Entfernt das Minuszeichen bei der Y-Achse:
         yticklabel={$\pgfmathparse{abs(\tick)}\pgfmathprintnumber{\pgfmathresult}$},
         clip=false,
         table/col sep=tab
@@ -325,55 +291,48 @@ Zum Vergleich wurde das Verhalten mit LTspice simuliert, siehe Abbildung \ref{fi
          \addplot[
             restrict x to domain=0:1.2,
             restrict y to domain=0:25,
-            color=orange,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=orange,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie1.txt};
             \addlegendentry{$U_{BE}$=\SI{660}{\milli\volt}}
         \addplot[
             restrict x to domain=0:1.2,
             restrict y to domain=0:25,
-            color=violet,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=violet,          
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie2.txt};
             \addlegendentry{$U_{BE}$=\SI{687.5}{\milli\volt}}
         \addplot[
             restrict x to domain=0:1.2,
             restrict y to domain=0:25,
-            color=red,         % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=red,         
+            thick,              
             ] table [x index=1, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/Ausgangskennlinie3.txt};
             \addlegendentry{$U_{BE}$=\SI{715}{\milli\volt}}
          \addplot[
             restrict y to domain=0:25,
-            color=green,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=green,          
+            thick,              
             ] table [x expr=\thisrowno{1}*-1000, y expr=\thisrowno{2}*1000] {Simulationen 1.Labor/sim2.txt};
         \addplot[
             restrict x to domain=-1.19:0,
-            color=blue,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=blue,          
+            thick,              
             ] table [x expr=\thisrowno{1}*-1, y expr=\thisrowno{2}*-1000] {Simulationen 1.Labor/Eingangskennlinie.txt};
         
         % Manuelle Beschriftungen der Quadranten-Achsen
-        \node[anchor=south west] at (rel axis cs:1, 0.5) {$U_{CE}$[V]};
-        \node[anchor=south east] at (rel axis cs:0, 0.5) {$I_{B}$[mA]};
-        \node[anchor=south west] at (rel axis cs:0.5, 1) {$I_C$[mA]};
-        \node[anchor=north west] at (rel axis cs:0.5, 0) {$U_{BE}$[V]};
+        \node[anchor=south west] at (rel axis cs:1, 0.5) {$U_{CE}$ [V]};
+        \node[anchor=south east] at (rel axis cs:0, 0.5) {$I_{B}$ [mA]};
+        \node[anchor=south west] at (rel axis cs:0.5, 1) {$I_C$ [mA]};
+        \node[anchor=north west] at (rel axis cs:0.5, 0) {$U_{BE}$ [V]};
     \end{axis}
 \end{tikzpicture}
 \caption{Vierquadranten-Kennlinienfeld (Simulation)}
 \label{fig:4}
 \end{figure}
 
-
-
 \subsection*{3}
-Die Simulationsergebnisse der Emitterschaltung zeigen ein sinusförmiges Ausgangssignal mit einer größeren Amplitude, siehe Abbildung \ref{fig:6}.
+Die Simulationsergebnisse der Emitterschaltung zeigen ein phasenverschobenes, sinusförmiges Ausgangssignal mit deutlich vergrößerter Amplitude (siehe Abbildung \ref{fig:6}).
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
@@ -383,38 +342,32 @@ Die Simulationsergebnisse der Emitterschaltung zeigen ein sinusförmiges Ausgang
             ylabel={$U$ [V]},
             grid=both,
             minor tick num=1,
-            % Wichtig für LTspice-Export (Tab-getrennt):
             table/col sep=tab, 
-            % Falls die Werte sehr klein sind (e-09), sorgt das für saubere Achsen:
             scaled y ticks=true,
             legend pos = outer north east,
         ]
         \addplot[
-            color=red,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=red,          
+            thick,              
             ] table [x index=0, y index=1] {Simulationen 1.Labor/Emitter.txt};
         \addlegendentry{Eingangsspannung}
         \addplot[
-            color=blue,          % Farbe der Linie
-            thick,              % Macht die Linie etwas dicker
-            % Wir definieren hier die Spalten-Indizes:
+            color=blue,          
+            thick,              
             ] table [x index=0, y index=2] {Simulationen 1.Labor/Emitter.txt};
         \addlegendentry{Ausgangsspannung}
         \end{axis}
     \end{tikzpicture}
-    \caption{Ein- und Ausgangssignal (Simulation)}
+    \caption{Ein- und Ausgangssignal der Emitterschaltung (Simulation)}
     \label{fig:6}
-\end{figure}
-  Die Verstärkung der simulierten Schaltung beträgt $23,25$, siehe Berechnung \ref{eq:4}. 
+    \end{figure}
+Die Spannungsverstärkung der simulierten Schaltung beläuft sich auf $A = 23,25$, wie aus Berechnung \ref{eq:4} hervorgeht:
 \begin{equation}
-    A = \frac{U_{A,PP}}{U_{E,PP}}= \frac{\SI{4.5}{\volt}-\SI{3.57}{\volt}}{\SI{0.02}{\volt}-(-\SI{0.02}{\volt})}=
-    \frac{\SI{0.93}{\volt}}{\SI{0.04}{\volt}}=23,25
+    A = \frac{U_{A,PP}}{U_{E,PP}} = \frac{\SI{4,5}{\volt} - \SI{3,57}{\volt}}{\SI{0,02}{\volt} - (-\SI{0,02}{\volt})} = \frac{\SI{0,93}{\volt}}{\SI{0,04}{\volt}} = 23,25
     \label{eq:4}
 \end{equation}
-Bei der Messung der Schaltung im Labor ergab sich eine Verstärkung von $21,875$, siehe Berechnung \ref{eq:5}.
+Bei der praktischen Überprüfung der Schaltung im Labor ergab sich eine reale Spannungsverstärkung von $A \approx 21,88$ (siehe Berechnung \ref{eq:5}).
 \begin{equation}
-    A = \frac{U_{A,PP}}{U_{E,PP}}= \frac{525}{24}
+    A = \frac{U_{A,PP}}{U_{E,PP}} = \frac{\SI{525}{\milli\volt}}{\SI{24}{\milli\volt}} \approx 21,875
     \label{eq:5}
 \end{equation}
-
