@@ -1,7 +1,6 @@
 \newpage
 
 \section{Laborversuch}
-Hier kommt alles zum dritten Laborversuch
 
 \section*{Kurzzusammenfassung} 
         In diesem Laborversuch wurde eine astabile Multivibratorschaltung 
@@ -173,7 +172,7 @@ Hier kommt alles zum dritten Laborversuch
                 \caption{Messschaltung Input-Offset}
                 \label{fig:8}
         \end{figure} 
-        Zum Schluss sollten die Input-Offset-Spannung, Input-Bias-Strom sowie die Bandbreite des OPV mit Verstärkung $A=1$ und Vestärkung $A=10$ simuliert werden.
+        Zum Schluss sollten die Input-Offset-Spannung, Input-Bias-Strom sowie die Bandbreite des OPV mit Verstärkung $1$ und Vestärkung $10$ simuliert werden.
         Das verwendete Spice-Modell ist der LM2904. Dieser OPV weißt Ähnlichkeit zu dem verwendeten LM358 auf besitzt jedoch 
         einige Unterschiede diese wirken sich auf die Simulationsergebnisse, bezüglich der Messung der Bandbreite. 
 
@@ -269,71 +268,67 @@ Hier kommt alles zum dritten Laborversuch
         Bei der Messung der Bandbreite  des OPV erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:1}.
         \begin{table}[H]
                 \centering
-                \begin{tabular}{c|c|c}
-                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                \begin{tabular}{c|c|c|c}
+                        Signaltyp       &  Verstäkung A &   Amplitude                   &       Grenzfrequenz \\
                         \hline
-                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{1.5}{\mega\hertz}\\
+                        Kleinsignal     &  1            &\qty{100}{\milli\volt}         & \qty{1.5}{\mega\hertz}\\
                         \hline
-                        Großsignal &   \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        Großsignal      &  1            &\qty{1000}{\milli\volt}        & \qty{180}{\kilo\hertz}\\
+                        \hline
+                        Kleinsignal     &  10           &\qty{100}{\milli\volt}        & \qty{110}{\mega\hertz}\\
+                        \hline
+                        Großsignal      &  10           &    -                         &             -           \\
                         
                 \end{tabular}
-                \caption{Messung der Bandbreite, Verstäkung 1}
+                \caption{Messung der Bandbreite}
                 \label{tab:1}
         \end{table}
-        Bei der Messung der Bandbreite des OPV mit einer Verstärkung $A=10$ erhält man folgende Bandbreiten, siehe Tabelle \ref{tab:2}.
+        Der Unterschied der Bandbreite des Kleinsignals mit Verstärkung $1$ und des Kleinsignals mit Verstärkung $10$ ist deutlich zu erkennen. Diese Unterschied entspricht auch ungefähr dem 
+        dem gleichen Verstärkungsbandbreiteprodukt, siehe Berechnung \ref{eq:10}. 
+        \begin{equation}
+                \qty{1.5}{\mega\hertz} \approx \qty{110}{\kilo\hertz} \cdot 10 = \qty{110}{\mega\hertz}
+                \label{eq:10}
+        \end{equation} 
+        Bei der Messung des Großsignals bei einer Verstärkung $10$ ging der OPV in den Slew-Bereich. Dabei wurde die Slew-Rate, aus der Steigung der Spannung und der Zeitbasis berechnet.
+        Die Berechnung \ref{eq:9} der Slew-Rate ergibt \qty{0.474}{\volt/\micro\second}. Die erwartete Slew-Rate des LM358 aus dem Datenblatt \cite{datasheet} lautet \qty{0.3}{\volt/\micro\second}.
+        \begin{equation}
+                dy = \qty{4.6}{\volt}, \, dx = \qty{9.7}{\micro\second}  \rightarrow SR = \frac{dy}{dx}= \frac{\qty{4.6}{\volt}}{\qty{9.7}{\micro\second}} = \qty{0.474}{\volt/\micro\second}.
+                \label{eq:9}
+        \end{equation}
+        Die LTspice Simulation ergab folgende Bandbreiten, siehe Tabelle \ref{tab:3}.
          \begin{table}[H]
                 \centering
-                \begin{tabular}{c|c|c}
-                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
+                \begin{tabular}{c|c|c|c}
+                        Signaltyp       & Verstäkung A          &  Amplitude            &       Grenzfrequenz \\
                         \hline
-                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{110}{\kilo\hertz}\\
+                        Kleinsignal     & 1                     & \qty{100}{\milli\volt}& \qty{950}{\kilo\hertz}\\
                         \hline
-                        Großsignal &   \qty{1000}{\milli\volt} & \qty{180}{\kilo\hertz}\\
+                        Großsignal      & 1                     &\qty{1000}{\milli\volt}& \qty{120}{\kilo\hertz}\\
+                        \hline
+                        Kleinsignal     & 10                    & \qty{100}{\milli\volt}& \qty{950}{\kilo\hertz}\\
+                        \hline
+                        Großsignal      & 10                    & -                     & -                     \\
                         
                 \end{tabular}
-                \caption{Messung der Bandbreite, Verstäkung 10}
-                \label{tab:2}
-        \end{table}
-        Die LTspice Simulation ergibt bei keiner Verstäkung folgende Bandbreiten, siehe Tabelle \ref{tab:3}.
-         \begin{table}[H]
-                \centering
-                \begin{tabular}{c|c|c}
-                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
-                        \hline
-                        Kleinsignal &   \qty{100}{\milli\volt} & \qty{950}{\kilo\hertz}\\
-                        \hline
-                        Großsignal &   \qty{1000}{\milli\volt} & \qty{120}{\kilo\hertz}\\
-                        
-                \end{tabular}
-                \caption{Simulation der Bandbreite, Verstäkung 1}
+                \caption{Simulation der Bandbreite}
                 \label{tab:3}
         \end{table}
-        Bei der Simulation des Großsignal geht der OPV ab einer Frequenz von ungefähr \qty{70}{\kilo\hertz} in eine Dreieckssignalform über, da er in den durch die Slew-Rate begrenzten 
-        Bereich geht. Dies konnten wir bei den Messungen nicht feststellen. Die Amplitude nimmt bei \qty{180}{\kilo\hertz} um den Faktor $\frac{1}{\sqrt{2}}$ ab.
-         von \qty{1.8}{\mega\hertz}.
-        Bei einer Verstärkung von $A=10$ erhält man folgende Bandbreite für das Kleinsignal, siehe Tabelle \ref{tab:4}.
-         \begin{table}[H]
-                \centering
-                \begin{tabular}{c|c|c}
-                        Signaltyp  &    Amplitude       &       Grenzfrequenz \\
-                        \hline
-                        Kleinsignal &   \qty{1}{\volt} & \qty{110}{\kilo\hertz}\\
-                \end{tabular}
-                \caption{Simulation der Bandbreite, Verstäkung 10}
-                \label{tab:4}
-        \end{table}
-        Das Ausgangssignal des Großsignals ist aufgrund der Slew-Rate begrenzt. Dies deckt sich auch mit den gemessenen Werten des Großsignals 
-        bei einer Verstäkung $A=10$.
+        Bei der Simulation des Großsignal, bei Vestärkung $1$ geht der OPV, ab einer Frequenz von ungefähr \qty{70}{\kilo\hertz} in eine Dreieckssignalform über, da er in den durch die Slew-Rate begrenzten 
+        Bereich geht. Dies konnte man bei den Messungen nicht feststellen. Grund dafür könnten andere Parameter des verwendeten Simulationsmodell sein.
+        Die Slew-Rate aus der Simulation beträgt \qty{0.36}{\volt/\milli\second} und  berechnet sich analog wie jene aus den gemessenen Werten, siehe Berechnung \ref{eq:9}.
+        Die Amplitude nimmt bei \qty{180}{\kilo\hertz} um den Faktor $\frac{1}{\sqrt{2}}$ ab.
+        Das Ausgangssignal des Großsignals, bei Verstäkung $10$ ist aufgrund der Slew-Rate begrenzt. Dies deckt sich auch mit den gemessenen Werten des Großsignals 
+        bei einer Verstäkung $10$.
 
         \subsection*{3}
         Die Input-Offset-Spannung ist die reale Differenzspannung zwischen den Eingangspins des OPV.
         Die gemessene Spannung beträgt \qty{3.6}{\milli\volt}. Dies stimmt auch mit dem erwarteten Wert von \qty{3}{\milli\volt} aus dem Datenblatt \cite{datasheet}.
-        Die LTSpice Simulation \ref{fig:10} ergab einen Input-Offset-Spannung von \qty{2.6}{\milli\volt} und eine Input-Bias-Current von 
+        Die LTspice Simulation \ref{fig:10} ergab einen Input-Offset-Spannung von \qty{2.6}{\milli\volt} und eine Input-Bias-Current von 
         \qty{-20}{\nano\ampere}.
         \begin{figure}[H]
                 \centering
                 \includegraphics[width = 0.5\linewidth]{Fotos 3.Labor/LTspice1.jpg}
-                \caption{Simulation des LM358}
+                \caption{Simulationsschaltung für Input-Offset-Spannung und Input-Bias-Strom}
                 \label{fig:10}
         \end{figure}
 
